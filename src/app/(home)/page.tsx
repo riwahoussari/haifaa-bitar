@@ -339,8 +339,8 @@ function QuoteSection() {
 
 function CtaSection() {
   return (
-    <section className="my-container flex flex-col lg:flex-row 2xl:gap-16 xl:gap-12 lg:gap-8 gap-12">
-      <div className="flex flex-col 2xl:gap-16 xl:gap-12 lg:gap-8 gap-12 lg:w-1/2 w-[min(100%,600px)] mx-auto">
+    <section className="my-container flex flex-col lg:flex-row 2xl:gap-16 xl:gap-12 lg:gap-8 gap-8">
+      <div className="flex flex-col 2xl:gap-16 xl:gap-12 lg:gap-8 gap-8 lg:w-1/2 w-[min(100%,600px)] mx-auto">
 
         {/* cta */}
         <div className="border-1 border-primary rounded-lg relative text-center flex flex-col items-center 2xl:p-20 xl:p-18 lg:p-16 py-10  bg-primary-200">
