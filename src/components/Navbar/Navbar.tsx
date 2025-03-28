@@ -1,5 +1,5 @@
 "use client";
-import haifaaBitarLogo from "../../assets/placeholder-logo.svg";
+import haifaaBitarLogo from "../../../public/HB-name.png";
 import Button from "../global/Button";
 import { useEffect, useRef, useState } from "react";
 import BurgerMenuSvg from "./BurgerMenuSvg";
@@ -91,7 +91,7 @@ export default function Navbar() {
           <Image
             src={haifaaBitarLogo}
             alt="Arthyl"
-            className="z-1 w-20 relative "
+            className="z-1 w-24 relative "
           />
         </Link>
 
