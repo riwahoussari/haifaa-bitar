@@ -9,7 +9,7 @@ type HoverLinkProps = {
 export default function HoverLink({ children, ...props }: HoverLinkProps) {
   return (
     
-    <Link {...props} className="group relative flex overflow-hidden">
+    <Link {...props} className="group relative flex lg:justify-start justify-center overflow-hidden">
       {/* Invisible placeholder to maintain height */}
       <span className="opacity-0 whitespace-pre">{renderLetters(children)}</span>
       {/* Text moves up & out of view on hover */}

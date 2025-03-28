@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Martel_Sans, Cormorant_Infant, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 // Load Cormorant Infant with only weight 600
 const cormorantInfant = Cormorant_Infant({
@@ -42,6 +43,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

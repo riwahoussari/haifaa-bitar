@@ -11,14 +11,13 @@ import ClinicPhoto from "../../../public/clinic-photo.jpg";
 
 export default function Home() {
   return (
-    <main className="space-y-28">
+    <main className="space-y-40 mb-40">
       <HeroSection />
       <AboutSection />
       <ServicesSection />
       <WhatIsPsychoanalysis />
       <QuoteSection />
       <CtaSection />
-      <div className="h-dvh"></div>
     </main>
   );
 }
