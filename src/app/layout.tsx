@@ -9,7 +9,7 @@ const cormorantInfant = Cormorant_Infant({
   variable: "--font-cormorant-infant",
   weight: "600",
   subsets: ["latin"],
-  style: ['italic']
+  style: ["italic"],
 });
 
 // Load Martel Sans with multiple weights
@@ -22,9 +22,9 @@ const martelSans = Martel_Sans({
 // Load Roboto
 const roboto = Roboto({
   variable: "--font-roboto",
-  weight: ['400', '600'],
-  subsets: ['latin']
-})
+  weight: ["400", "600"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Psychoanalyst - Haifaa Bitar",

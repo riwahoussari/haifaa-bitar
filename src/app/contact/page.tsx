@@ -1,13 +1,12 @@
 import Button from "@/components/global/Button";
 import Image from "next/image";
 import DecorativeCorner from "../../assets/decorative-corner.svg";
-import ClinicPhoto from "../../../public/clinic-photo.jpg";
-import TitleSection from "@/components/global/TitleSection";
+import PageTitle from "@/components/global/PageTitle";
 
-export default function Contact() {
+export default function ContactPage() {
   return (
     <main className="space-y-40 mb-40">
-      <TitleSection>Contact</TitleSection>
+      <PageTitle>Contact</PageTitle>
       <ContactSection />
     </main>
   );
@@ -19,7 +18,7 @@ function ContactSection() {
       {/* form */}
       <div className=" relative bg-primary-200 border-1 border-primary rounded-lg lg:w-1/2 w-[min(100%,600px)] mx-auto 2xl:p-18 xl:p-16 lg:p-14 md:p-14 sm:p-12 px-10 py-14">
         <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl 2xl:mb-10 xl:mb-9 lg:mb-8 mb-6">
-          Or Reach Out
+          Share A Message
         </h2>
         <form className="flex flex-col 2xl:gap-7 xl:gap-6 lg:gap-5 gap-6 items-start">
           <div className="flex flex-col 2xl:w-[80%] xl:w-[85%] lg:w-[90%] w-[min(100%,400px)] ">
@@ -87,7 +86,7 @@ function ContactSection() {
           </h2>
           <a href="https://wa.me/9613404129" target="_blank">
             <Button size="md" variant="primary" arrow>
-              Reach Out
+              Get In Touch
             </Button>
           </a>
         </div>
@@ -95,11 +94,11 @@ function ContactSection() {
         {/* email */}
         <div className="h-full border-1 border-primary rounded-lg relative text-center flex flex-col items-center justify-center 2xl:p-20 xl:p-18 lg:p-16 py-10 px-6">
           <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl mb-6">
-            Email (hello@haifaabitar.com)
+            Email (hayfaabigab258@gmail.com)
           </h2>
-          <a href="mailto:hello@haifaabitar.com" target="_blank">
+          <a href="mailto:hayfaabigab258@gmail.com" target="_blank">
             <Button size="md" variant="primary" arrow>
-              Reach Out
+              Get In Touch
             </Button>
           </a>
         </div>

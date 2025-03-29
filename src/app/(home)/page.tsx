@@ -47,9 +47,17 @@ function HeroSection() {
           </span>
         </h1>
         <p className="lg:mt-[25px] lg:mb-[50px] mt-[20px] mb-[40px] 2xl:text-[24px] xl:text-[22px] lg:text-[20px] text-[20px] 2xl:w-[800px] xl:w-[760px] lg:w-[700px] sm:w-[70vw] w-[min(100%,470px)] opacity-80 leading-[150%]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elementum tristique. Duis cursus, mi quis viverra
-          ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+          Haifaa Bitar – Clinical Psychologist, Psychotherapist, and
+          Psychoanalyst.
+          <br /> Helping individuals of all ages navigate trauma, anxiety,
+          depression, and OCD through{" "}
+          <a
+            href="#what-is-psychoanalysis"
+            className="underline hover:[text-decoration:none]"
+          >
+            psychoanalysis
+          </a>
+          .
         </p>
         <Button arrow size="lg" variant="primary">
           Reach Out
@@ -122,48 +130,44 @@ function AboutSection() {
       <div className="text-center lg:w-[50%] lg:space-y-[50vh] lg:py-[50vh] space-y-40 py-20 w-[min(100%,500px)] xl:text-xl lg:text-lg text-lg leading-[160%]">
         <div className="lg:w-[95%] ms-auto lg:space-y-12 space-y-8">
           <h2 className="font-heading xl:text-6xl lg:text-5xl text-4xl">
-            My Story
+            About Me
           </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Duis cursus, mi quis
-            viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-            vitae erat.
+            With over a decade of experience in clinical psychology and
+            <a
+              href="#what-is-psychoanalysis"
+              className="underline hover:[text-decoration:none]"
+            >
+              {" "}
+              psychoanalysis
+            </a>
+            , I specialize in helping individuals gain a deeper understanding of
+            themselves and their life experiences.
             <br />
             <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Duis cursus, mi quis
-            viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-            vitae erat.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Duis cursus, mi quis
-            viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-            vitae erat.
+            My approach is rooted in psychoanalysis, offering a space for
+            self-exploration that leads to healing and personal growth.
           </p>
         </div>
         <div className="lg:w-[95%] ms-auto lg:space-y-12 space-y-8">
           <h2 className="font-heading xl:text-6xl lg:text-5xl text-4xl">
-            What I Do
+            My Approach
           </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Duis cursus, mi quis
-            viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-            vitae erat.
+            I work within the psychoanalytic framework, which delves into the
+            unconscious mind to uncover hidden thoughts and emotions that shape
+            behavior.
             <br />
             <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Duis cursus, mi quis
-            viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-            vitae erat.
+            This method allows for profound self-awareness, helping individuals
+            <strong> address</strong> challenges such as{" "}
+            <strong>trauma, anxiety, depression, and OCD.</strong>
           </p>
         </div>
         <div className="w-[95%] ms-auto space-y-32">
           <div className="space-y-6">
             <h2 className="font-heading xl:text-8xl lg:text-7xl text-6xl">
-              13+
+              {new Date().getFullYear() - 2012}+
             </h2>
             <p>Years of Experience</p>
           </div>
@@ -199,10 +203,11 @@ function ServicesSection() {
               Online Therapy Session
             </h3>
             <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam
-              libero vitae erat.
+              Get professional support from the comfort of your home with secure
+              and confidential online therapy sessions. Whether you're dealing
+              with anxiety, depression, trauma, or OCD, online therapy offers
+              flexibility and accessibility while helping you gain
+              self-awareness and emotional clarity.
             </p>
           </div>
           <Button size="lg" variant="secondary" arrow>
@@ -221,10 +226,11 @@ function ServicesSection() {
               Clinical Therapy Session
             </h3>
             <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Duis cursus,
-              mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam
-              libero vitae erat.
+              Experience face-to-face therapy in a private and supportive
+              environment. In-clinic sessions provide a dedicated space for deep
+              self-exploration, helping you overcome challenges, process
+              emotions, and achieve personal growth with professional
+              psychological guidance.
             </p>
           </div>
           <Button size="lg" variant="secondary" arrow>
@@ -240,7 +246,7 @@ function ServicesSection() {
           <p className="font-light 2xl:text-2xl lg:text-xl text-lg">Days</p>
           <p className=" whitespace-pre font-semibold 2xl:text-3xl lg:text-2xl text-2xl">
             Mon{" "}
-            <span className="inline-block">
+            <span className="inline-block translate-y-1">
               <ArrowSvg
                 className="stroke-primary lg:w-8 w-6"
                 strokeWidth={1.5}
@@ -254,7 +260,7 @@ function ServicesSection() {
           <p className="font-light 2xl:text-2xl lg:text-xl text-lg">Hours</p>
           <p className=" whitespace-pre font-semibold 2xl:text-3xl lg:text-2xl text-2xl">
             8:00AM{" "}
-            <span className="inline-block">
+            <span className="inline-block translate-y-1">
               <ArrowSvg
                 className="stroke-primary lg:w-8 w-6"
                 strokeWidth={1.5}
@@ -277,7 +283,7 @@ function ServicesSection() {
 
 function WhatIsPsychoanalysis() {
   return (
-    <section className="flex flex-col items-center">
+    <section id="what-is-psychoanalysis" className="flex flex-col items-center">
       <div className="flex justify-center gap-3">
         <Image
           src={DecorativeLine}
@@ -296,14 +302,7 @@ function WhatIsPsychoanalysis() {
         What Is Psychoanalysis?
       </h2>
       <p className="text-center xl:w-[800px] lg:w-[700px] w-[min(90%,650px)] xl:text-xl lg:text-lg text-lg leading-[160%] opacity-80">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros elementum tristique. Duis cursus, mi quis viverra
-        ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros elementum tristique. Duis cursus, mi quis viverra
-        ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros elementum tristique. Duis cursus, mi quis viverra.
+      Psychoanalysis is a form of therapy that helps you understand the deeper layers of your mind—especially thoughts, emotions, and patterns you might not even be aware of. It is based on the idea that many of our feelings and behaviors are influenced by unconscious experiences, often from childhood. Through open conversation in a safe and supportive space, psychoanalysis helps you explore these hidden influences, uncover unresolved emotions, and gain insight into why you think, feel, and act the way you do. Unlike quick-fix approaches, psychoanalysis focuses on long-term self-discovery and healing, allowing you to break free from repeating patterns, overcome personal struggles, and develop a stronger sense of self. It’s not just about treating symptoms—it’s about truly understanding yourself and creating lasting change in your life.
       </p>
     </section>
   );
@@ -341,15 +340,13 @@ function CtaSection() {
   return (
     <section className="my-container flex flex-col lg:flex-row 2xl:gap-16 xl:gap-12 lg:gap-8 gap-8">
       <div className="flex flex-col 2xl:gap-16 xl:gap-12 lg:gap-8 gap-8 lg:w-1/2 w-[min(100%,600px)] mx-auto">
-
         {/* cta */}
         <div className="border-1 border-primary rounded-lg relative text-center flex flex-col items-center 2xl:p-20 xl:p-18 lg:p-16 py-10  bg-primary-200">
           <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl">
-            Book A Session
+          Here for You, Anytime
           </h2>
           <p className="xl:text-xl lg:text-lg text-lg text-black lg:mt-4 lg:mb-8 mt-3 mb-6 lg:w-full w-[min(85%,450px)]">
-            Lorem ipsum tortor ullamcorper porta volutpat volutpat odio sed in
-            facilisis nulla a vel est eget.
+          You don’t have to figure it all out alone  — support is here, one click away.
           </p>
           <Button size="md" variant="primary" arrow>
             Book Now
@@ -370,9 +367,7 @@ function CtaSection() {
           />
         </div>
         {/* clinic photo */}
-        <div
-          className="border-1 border-primary rounded-lg lg:h-full h-40 relative overflow-hidden"
-        >
+        <div className="border-1 border-primary rounded-lg lg:h-full h-40 relative overflow-hidden">
           {/* Pseudo-element for inner shadow */}
           <div
             className="absolute inset-0 z-10 pointer-events-none"
@@ -389,7 +384,7 @@ function CtaSection() {
       {/* form */}
       <div className="border-1 border-primary rounded-lg lg:w-1/2 w-[min(100%,600px)] mx-auto 2xl:p-16 xl:p-14 lg:p-12 p-6">
         <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl 2xl:mb-10 xl:mb-9 lg:mb-8 mb-6">
-          Or Reach Out
+          Reach Out
         </h2>
         <form className="flex flex-col 2xl:gap-7 xl:gap-6 lg:gap-5 gap-6 items-start">
           <div className="flex flex-col 2xl:w-[80%] xl:w-[85%] lg:w-[90%] w-[min(100%,400px)] ">

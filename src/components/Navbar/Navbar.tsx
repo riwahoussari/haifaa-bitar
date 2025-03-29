@@ -4,7 +4,6 @@ import Button from "../global/Button";
 import { useEffect, useRef, useState } from "react";
 import BurgerMenuSvg from "./BurgerMenuSvg";
 import MobileNavMenu from "./MobileNavMenu";
-// import { PAGES } from "../../utils/contactInfo";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import HoverLink from "./HoverLink";
 import Image from "next/image";
@@ -17,7 +16,7 @@ const PAGES = [
     link: "/",
   },
   {
-    name: "Sevices",
+    name: "Services",
     link: "/services",
   },
   {
@@ -109,14 +108,14 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             className="hidden sm:inline"
-            href="/shop"
+            href="/contact"
             onClick={() => setMobileMenuOpen(false)}
           >
             <Button arrow={false} size="md" variant="secondary" >
               Reach Out
             </Button>
           </Link>
-          <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>
+          <Link href="/" onClick={() => setMobileMenuOpen(false)}>
             <Button arrow={false} size="md">
               Book Now
             </Button>
