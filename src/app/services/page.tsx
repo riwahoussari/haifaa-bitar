@@ -4,23 +4,26 @@ import Sparkle from "../../assets/sparkle.svg";
 import IllustrationOnlineTherapy from "../../../public/illustration-online-therapy.svg";
 import IllustrationClinicalTherapy from "../../../public/illustration-clinical-therapy.svg";
 import ArrowSvg from "@/components/global/ArrowSvg";
+import DecorativeLine from "../../assets/decorative-line.svg";
+import CheckMarkSvg from "@/components/global/CheckMarkSvg";
 
 export default function ServicesPage() {
   return (
-    <main className="space-y-40 mb-40">
+    <main className="space-y-40 mb-60">
       <PageTitle>Services</PageTitle>
       <Services />
+      <CtaSection />
     </main>
   );
 }
 
 function Services() {
   return (
-    <section className="my-container space-y-60">
+    <section className="my-container space-y-40">
       {/* Online Therapy */}
       <div className="flex flex-col 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
         {/* title */}
-        <div className="flex mb-8 xl:gap-6 lg:gap-5 gap-4">
+        <div className="flex mb-8 xl:gap-6 lg:gap-5 gap-4 lg:justify-start justify-center ">
           <Image
             src={Sparkle}
             alt=""
@@ -71,21 +74,30 @@ function Services() {
 
           {/* Checklist */}
           <div className="rounded-lg border-1 border-primary 2xl:p-8 xl:p-7 lg:p-6 p-4 col-span-2">
-            <p className="2xl:text-2xl xl:text-xl lg:text-lg text-base leading-[120%] font-semibold 2xl:space-y-8 xl:space-y-7 lg:space-y-6 space-y-4">
-              <span className="inline-block">
-                ✔ Convenient and accessible from anywhere
+            <p className="2xl:text-2xl xl:text-xl lg:text-lg text-base leading-[120%] font-semibold 2xl:space-y-6 xl:space-y-5 lg:space-y-4 space-y-3">
+              <span className="gap-2 flex items-center">
+                <span className="inline-block shrink-0 2xl:w-7 xl:w-6 lg:w-5 w-4">
+                  <CheckMarkSvg />
+                </span>{" "}
+                Convenient and accessible from anywhere
               </span>
-              <br />
-              <span className="inline-block">
-                ✔ Confidential and secure platform
+              <span className="gap-2 flex items-center">
+                <span className="inline-block shrink-0 2xl:w-7 xl:w-6 lg:w-5 w-4">
+                  <CheckMarkSvg />
+                </span>{" "}
+                Confidential and secure platform
               </span>
-              <br />
-              <span className="inline-block">
-                ✔ Ideal for individuals with busy schedules or limited mobility
+              <span className="gap-2 flex items-center">
+                <span className="inline-block shrink-0 2xl:w-7 xl:w-6 lg:w-5 w-4">
+                  <CheckMarkSvg />
+                </span>{" "}
+                Ideal for individuals with busy schedules or limited mobility
               </span>
-              <br />
-              <span className="inline-block">
-                ✔ Effective for managing stress, anxiety, depression, and trauma
+              <span className="gap-2 flex items-center">
+                <span className="inline-block shrink-0 2xl:w-7 xl:w-6 lg:w-5 w-4">
+                  <CheckMarkSvg />
+                </span>{" "}
+                Effective for managing stress, anxiety, depression, and trauma
               </span>
             </p>
           </div>
@@ -95,7 +107,7 @@ function Services() {
       {/* Clinical Therapy */}
       <div className="flex flex-col 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
         {/* title */}
-        <div className="flex mb-8 xl:gap-6 lg:gap-5 gap-4">
+        <div className="flex mb-8 xl:gap-6 lg:gap-5 gap-4 lg:justify-start justify-center ">
           <Image
             src={Sparkle}
             alt=""
@@ -132,22 +144,31 @@ function Services() {
         <div className="lg:grid grid-cols-3 flex flex-col w-[min(96%,600px)] lg:w-full mx-auto  2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
           {/* Checklist */}
           <div className="rounded-lg border-1 border-primary 2xl:p-8 xl:p-7 lg:p-6 p-4 col-span-2">
-            <p className="2xl:text-2xl xl:text-xl lg:text-lg text-base leading-[120%] font-semibold 2xl:space-y-8 xl:space-y-7 lg:space-y-6 space-y-4">
-              <span className="inline-block">
-                ✔ Personalized, in-depth therapeutic experience
+            <p className="2xl:text-2xl xl:text-xl lg:text-lg text-base leading-[120%] font-semibold 2xl:space-y-6 xl:space-y-5 lg:space-y-4 space-y-3">
+              <span className="gap-2 flex items-center">
+                <span className="inline-block shrink-0 2xl:w-7 xl:w-6 lg:w-5 w-4">
+                  <CheckMarkSvg />
+                </span>{" "}
+                Personalized, in-depth therapeutic experience
               </span>
-              <br />
-              <span className="inline-block">
-                ✔ Support for trauma, anxiety, depression, OCD, and personal
+              <span className="gap-2 flex items-center">
+                <span className="inline-block shrink-0 2xl:w-7 xl:w-6 lg:w-5 w-4">
+                  <CheckMarkSvg />
+                </span>{" "}
+                Support for trauma, anxiety, depression, OCD, and personal
                 growth
               </span>
-              <br />
-              <span className="inline-block">
-                ✔ A dedicated space for self-exploration and healing
+              <span className="gap-2 flex items-center">
+                <span className="inline-block shrink-0 2xl:w-7 xl:w-6 lg:w-5 w-4">
+                  <CheckMarkSvg />
+                </span>{" "}
+                A dedicated space for self-exploration and healing
               </span>
-              <br />
-              <span className="inline-block">
-                ✔ Face-to-face interaction for a stronger therapeutic bond
+              <span className="gap-2 flex items-center">
+                <span className="inline-block shrink-0 2xl:w-7 xl:w-6 lg:w-5 w-4">
+                  <CheckMarkSvg />
+                </span>{" "}
+                Face-to-face interaction for a stronger therapeutic bond
               </span>
             </p>
           </div>
@@ -166,6 +187,36 @@ function Services() {
           </a>
         </div>
       </div>
+    </section>
+  );
+}
+
+function CtaSection() {
+  return (
+    <section className="flex flex-col items-center relative my-container py-10">
+      <div className="flex justify-center gap-3">
+        <Image
+          src={DecorativeLine}
+          alt=""
+          aria-hidden
+          className="xl:w-[200px] lg:w-[180px] w-[140px]"
+        />
+        <Image
+          src={DecorativeLine}
+          alt=""
+          aria-hidden
+          className="xl:w-[200px] lg:w-[180px] w-[140px] rotate-y-180"
+        />
+      </div>
+      <h2 className="font-heading xl:text-6xl lg:text-5xl text-4xl text-center xl:mt-12 xl:mb-6 mt-10 mb-4">
+        Start Your Therapy Journey
+      </h2>
+      <p className="text-center xl:w-[800px] lg:w-[700px] w-[min(90%,650px)] xl:text-xl lg:text-lg text-lg leading-[160%] opacity-80">
+        Whether online or in person, therapy is an opportunity to gain insight,
+        heal from past experiences, and take charge of your mental well-being.
+        Book a session today and take the first step toward self-discovery and
+        growth.
+      </p>
     </section>
   );
 }
