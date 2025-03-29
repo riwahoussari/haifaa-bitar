@@ -93,7 +93,7 @@ export default function Footer() {
           <div className="border-1 border-primary rounded-lg overflow-hidden 2xl:h-96 xl:h-80 h-72">
             <iframe
               title="clinic location on google maps"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.5460737549797!2d35.5392453!3d33.8755875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f173955f4d9a7%3A0x19b0ad8788bdf8d2!2sMario%20Abboud!5e0!3m2!1sen!2slb!4v1713796655465!5m2!1sen!2slb"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26496.135290220027!2d35.5042823!3d33.889218299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f17215880a78f%3A0x729182bae99836b4!2sBeirut!5e0!3m2!1sen!2slb!4v1743246788333!5m2!1sen!2slb"
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
