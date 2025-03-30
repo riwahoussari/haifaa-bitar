@@ -4,7 +4,7 @@ import DecorativeCorner from "../../assets/decorative-corner.svg";
 
 export default function PageTitle({children}: {children: string}) {
     return (
-      <section className="my-container mt-[40px] relative space-y-6  xl:py-20 lg:py-18 py-14">
+      <section className="my-container 2xl:mt-[100px] xl:mt-[80px] lg:mt-[60px] mt-[40px] relative space-y-6  xl:py-20 lg:py-18 py-14">
         <h1 className="font-heading 2xl:text-[110px] xl:text-[100px] lg:text-[80px] text-[max(52px,8vw)] text-center">
           {children}
         </h1>

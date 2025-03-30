@@ -6,11 +6,11 @@ import Button from "@/components/global/Button";
 
 export default function AboutPage() {
   return (
-    <main className="space-y-40 mb-40">
+    <>
       <PageTitle>About Me</PageTitle>
       <About1 />
       <About2 />
-    </main>
+    </>
   );
 }
 

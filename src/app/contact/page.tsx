@@ -5,10 +5,10 @@ import PageTitle from "@/components/global/PageTitle";
 
 export default function ContactPage() {
   return (
-    <main className="space-y-40 mb-40">
+    <>
       <PageTitle>Contact</PageTitle>
       <ContactSection />
-    </main>
+    </>
   );
 }
 

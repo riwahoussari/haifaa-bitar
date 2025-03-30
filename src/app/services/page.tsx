@@ -9,17 +9,17 @@ import CheckMarkSvg from "@/components/global/CheckMarkSvg";
 
 export default function ServicesPage() {
   return (
-    <main className="space-y-40 mb-60">
+    <>
       <PageTitle>Services</PageTitle>
       <Services />
       <CtaSection />
-    </main>
+    </>
   );
 }
 
 function Services() {
   return (
-    <section className="my-container space-y-40">
+    <section className="my-container space-y-60 lg:space-y-72 xl:space-y-80">
       {/* Online Therapy */}
       <div className="flex flex-col 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
         {/* title */}

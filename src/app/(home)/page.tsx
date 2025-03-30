@@ -11,21 +11,21 @@ import ClinicPhoto from "../../../public/clinic-photo.jpg";
 
 export default function Home() {
   return (
-    <main className="space-y-40 mb-40">
+    <>
       <HeroSection />
       <AboutSection />
       <ServicesSection />
       <WhatIsPsychoanalysis />
       <QuoteSection />
       <CtaSection />
-    </main>
+    </>
   );
 }
 
 function HeroSection() {
   return (
     <section>
-      <div className="my-container relative flex flex-col items-center text-center py-[60px] my-[40px]  ">
+      <div className="my-container relative flex flex-col items-center text-center py-[60px] 2xl:my-[100px] xl:my-[80px] lg:my-[60px] my-[40px]  ">
         {/* text */}
         <h1 className="font-heading 2xl:text-[110px] xl:text-[100px] lg:text-[80px] text-[max(52px,8vw)] leading-[1.2]">
           <span className="flex flex-wrap items-center justify-center whitespace-pre">
@@ -110,20 +110,20 @@ function AboutSection() {
         />
 
         <div
-          className="lg:hidden absolute top-full w-full -translate-y-1/2 bg-bg-color flex justify-center gap-3"
+          className="lg:hidde absolute top-full w-full -translate-y-1/2 bg-bg-color flex justify-center gap-3"
           style={{ boxShadow: "0px 0px 10px 10px var(--color-bg-color)" }}
         >
           <Image
             src={DecorativeLine}
             alt=""
             aria-hidden
-            className="w-[max(25vw,140px)]"
+            className="w-[max(25vw,140px)] lg:[visibility:hidden]"
           />
           <Image
             src={DecorativeLine}
             alt=""
             aria-hidden
-            className="w-[max(25vw,140px)] rotate-y-180"
+            className="w-[max(25vw,140px)] rotate-y-180 lg:[visibility:hidden]"
           />
         </div>
       </div>

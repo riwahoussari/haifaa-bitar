@@ -42,7 +42,10 @@ export default function RootLayout({
         className={`${cormorantInfant.variable} ${roboto.variable} antialiased bg-bg-color text-primary font-text`}
       >
         <Navbar />
+        <main className="space-y-60 lg:space-y-72 xl:space-y-80 mb-60 lg:mb-72 xl:mb-80 ">
+
         {children}
+        </main>
         <Footer />
       </body>
     </html>
