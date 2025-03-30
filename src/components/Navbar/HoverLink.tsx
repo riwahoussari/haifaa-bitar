@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { TransitionLink } from "../global/TransitionLink";
 // import { TransitionLink } from "../global/TransitionLink";
 
 type HoverLinkProps = {
@@ -9,18 +10,18 @@ type HoverLinkProps = {
 export default function HoverLink({ children, ...props }: HoverLinkProps) {
   return (
     
-    <Link {...props} className="group relative flex lg:justify-start justify-center overflow-hidden">
+    <TransitionLink {...props} className="group relative flex lg:justify-start justify-center overflow-hidden">
       {/* Invisible placeholder to maintain height */}
       <span className="opacity-0 whitespace-pre">{renderLetters(children)}</span>
       {/* Text moves up & out of view on hover */}
       <span className="absolute bottom-0 whitespace-pre" aria-hidden>
-        {renderLetters(children, "out")}
+        {renderLetters(children, "out")} 
       </span>
-      {/* Text moves up & into view on hover */}
+      {/* Text moves up & into view on hover  */}
       <span className="absolute top-full whitespace-pre" aria-hidden>
-        {renderLetters(children, "in")}
+        {renderLetters(children, "in")} 
       </span>
-    </Link>
+    </TransitionLink>
     
   );
 }

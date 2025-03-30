@@ -1,9 +1,8 @@
 import { AnimatePresence, motion } from "motion/react";
-// import { TransitionLink } from "../global/TransitionLink";
 import { MouseEventHandler } from "react";
-import Link from "next/link";
 import SparkleSvg from "../../assets/sparkle.svg";
 import Image from "next/image";
+import { TransitionLink } from "../global/TransitionLink";
 
 const PAGES = [
   {
@@ -77,7 +76,7 @@ function MobileNavLink({
 }: {
   index: number;
   onClick: MouseEventHandler<HTMLDivElement>;
-} & React.ComponentProps<typeof Link>) {
+} & React.ComponentProps<typeof TransitionLink>) {
   return (
     <motion.div
       custom={PAGES.length - index} // Pass custom value for staggered animation
@@ -87,15 +86,13 @@ function MobileNavLink({
       exit="exit"
       onClick={onClick}
     >
-      {/* <TransitionLink */}
-      <Link
+      <TransitionLink
         {...props}
         className={`my-container flex justify-end items-end text-primary gap-[5%] py-6 text-3xl `}
       >
         {props.children}
         <Image src={SparkleSvg} alt="" aria-hidden className="w-8" />
-      </Link>
-      {/* </TransitionLink> */}
+      </TransitionLink>
     </motion.div>
   );
 }

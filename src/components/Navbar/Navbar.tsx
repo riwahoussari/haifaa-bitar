@@ -7,8 +7,7 @@ import MobileNavMenu from "./MobileNavMenu";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import HoverLink from "./HoverLink";
 import Image from "next/image";
-import Link from "next/link";
-// import { TransitionLink } from "../global/TransitionLink";
+import { TransitionLink } from "../global/TransitionLink";
 
 const PAGES = [
   {
@@ -86,13 +85,13 @@ export default function Navbar() {
     >
       <div className="my-container flex items-center justify-between py-3">
         {/* LOGO */}
-        <Link href="/">
+        <TransitionLink href="/">
           <Image
             src={haifaaBitarLogo}
             alt="Arthyl"
             className="z-1 w-24 relative "
           />
-        </Link>
+        </TransitionLink>
 
         {/* Big Screen Navigation Links */}
         <nav className="text-lg absolute bottom-0 left-1/2 top-0 hidden -translate-x-1/2 items-center gap-4 lg:flex lg:gap-8">
@@ -106,7 +105,7 @@ export default function Navbar() {
         {/* CTA Button & Mobile Menu Toggle */}
         <div className="z-1 relative flex items-center gap-4">
           {/* CTA */}
-          <Link
+          <TransitionLink
             className="hidden sm:inline"
             href="/contact"
             onClick={() => setMobileMenuOpen(false)}
@@ -114,12 +113,12 @@ export default function Navbar() {
             <Button arrow={false} size="md" variant="secondary" >
               Reach Out
             </Button>
-          </Link>
-          <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+          </TransitionLink>
+          <TransitionLink href="/" onClick={() => setMobileMenuOpen(false)}>
             <Button arrow={false} size="md">
               Book Now
             </Button>
-          </Link>
+          </TransitionLink>
 
           {/* Mobile Burger Menu */}
           <div

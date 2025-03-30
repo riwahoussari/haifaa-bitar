@@ -32,8 +32,49 @@ html {
 .show-at-470 {
   display: none;
 }
-@media (min-width: 470px){
+@media (min-width: 470px) {
   .show-at-470 {
-    display: block
+    display: block;
   }
+}
+
+body {
+  transition-property: opacity, transform, filter, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
+.page-transition-container {
+  overflow: visible;
+  top: 100%;
+}
+.page-transition-container div.column {
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 350ms;
+}
+.page-transition .page-transition-container div.column {
+  transform: translateY(-100%);
+}
+
+.page-transition-container div.column:nth-child(7) {
+  transition-delay: 0s;
+}
+.page-transition-container div.column:nth-child(6) {
+  transition-delay: 30ms;
+}
+.page-transition-container div.column:nth-child(5) {
+  transition-delay: 60ms;
+}
+.page-transition-container div.column:nth-child(4) {
+  transition-delay: 90ms;
+}
+.page-transition-container div.column:nth-child(3) {
+  transition-delay: 120ms;
+}
+.page-transition-container div.column:nth-child(2) {
+  transition-delay: 150ms;
+}
+.page-transition-container div.column:nth-child(1) {
+  transition-delay: 180ms;
 }
