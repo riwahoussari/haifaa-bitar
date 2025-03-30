@@ -106,7 +106,7 @@ function AboutSection() {
           src={HaifaaBitarPortrait}
           placeholder="blur"
           alt="Portrait of Psychoanalyst Haifaa Bitar."
-          className="w-[80%] max-h-dvh object-contain lg:mx-0 mx-auto"
+          className="lg:w-[80%]  w-[min(80%,350px)] max-h-dvh object-contain lg:mx-0 mx-auto"
         />
 
         <div
@@ -117,13 +117,13 @@ function AboutSection() {
             src={DecorativeLine}
             alt=""
             aria-hidden
-            className="w-[max(25vw,140px)] lg:[visibility:hidden]"
+            className="w-[max(20vw,140px)] lg:[visibility:hidden]"
           />
           <Image
             src={DecorativeLine}
             alt=""
             aria-hidden
-            className="w-[max(25vw,140px)] rotate-y-180 lg:[visibility:hidden]"
+            className="w-[max(20vw,140px)] rotate-y-180 lg:[visibility:hidden]"
           />
         </div>
       </div>
