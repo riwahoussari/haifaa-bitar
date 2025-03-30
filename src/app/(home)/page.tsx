@@ -171,7 +171,7 @@ function AboutSection() {
         </div>
 
         {/* Stats */}
-        <div className="w-[95%] ms-auto space-y-32">
+        <div className="w-[95%] lg:ms-auto mx-auto lg:mx-0 space-y-32">
           <div className="space-y-6">
             <h2 className="font-heading xl:text-8xl lg:text-7xl text-6xl">
               {new Date().getFullYear() - 2012}+

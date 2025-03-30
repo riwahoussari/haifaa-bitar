@@ -49,15 +49,19 @@ export default function RootLayout({
           {Array(COLS_NUMB)
             .fill("")
             .map((_, i) => (
-              <div key={_ + i} className={`column h-full w-full bg-primary ${((i < COLS_NUMB - MD_COLS_NUMB) && " hidden md:block")}`}/>
+              <div
+                key={_ + i}
+                className={`column h-full w-full bg-primary ${
+                  i < COLS_NUMB - MD_COLS_NUMB && " hidden md:block"
+                }`}
+              />
             ))}
         </div>
 
         {/*  */}
         <Navbar />
-        <main className="space-y-60 lg:space-y-72 xl:space-y-80 mb-60 lg:mb-72 xl:mb-80 ">
-
-        {children}
+        <main className="space-y-60 lg:space-y-72 xl:space-y-80 mb-40 lg:mb-72 xl:mb-80 ">
+          {children}
         </main>
         <Footer />
       </body>
