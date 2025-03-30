@@ -100,6 +100,7 @@ function HeroSection() {
 function AboutSection() {
   return (
     <section className="my-container flex lg:items-end items-center flex-col lg:flex-row">
+      {/* image */}
       <div className="lg:sticky relative lg:bottom-0 lg:w-[50%]">
         <Image
           src={HaifaaBitarPortrait}
@@ -127,8 +128,10 @@ function AboutSection() {
         </div>
       </div>
 
+      {/* text */}
       <div className="text-center lg:w-[50%] lg:space-y-[50vh] lg:py-[50vh] space-y-40 py-20 w-[min(100%,500px)] xl:text-xl lg:text-lg text-lg leading-[160%]">
         <div className="lg:w-[95%] ms-auto lg:space-y-12 space-y-8">
+          {/* About me */}
           <h2 className="font-heading xl:text-6xl lg:text-5xl text-4xl">
             About Me
           </h2>
@@ -149,6 +152,8 @@ function AboutSection() {
             self-exploration that leads to healing and personal growth.
           </p>
         </div>
+
+        {/* My Approach */}
         <div className="lg:w-[95%] ms-auto lg:space-y-12 space-y-8">
           <h2 className="font-heading xl:text-6xl lg:text-5xl text-4xl">
             My Approach
@@ -164,6 +169,8 @@ function AboutSection() {
             <strong>trauma, anxiety, depression, and OCD.</strong>
           </p>
         </div>
+
+        {/* Stats */}
         <div className="w-[95%] ms-auto space-y-32">
           <div className="space-y-6">
             <h2 className="font-heading xl:text-8xl lg:text-7xl text-6xl">
@@ -302,7 +309,18 @@ function WhatIsPsychoanalysis() {
         What Is Psychoanalysis?
       </h2>
       <p className="text-center xl:w-[800px] lg:w-[700px] w-[min(90%,650px)] xl:text-xl lg:text-lg text-lg leading-[160%] opacity-80">
-      Psychoanalysis is a form of therapy that helps you understand the deeper layers of your mind—especially thoughts, emotions, and patterns you might not even be aware of. It is based on the idea that many of our feelings and behaviors are influenced by unconscious experiences, often from childhood. Through open conversation in a safe and supportive space, psychoanalysis helps you explore these hidden influences, uncover unresolved emotions, and gain insight into why you think, feel, and act the way you do. Unlike quick-fix approaches, psychoanalysis focuses on long-term self-discovery and healing, allowing you to break free from repeating patterns, overcome personal struggles, and develop a stronger sense of self. It’s not just about treating symptoms—it’s about truly understanding yourself and creating lasting change in your life.
+        Psychoanalysis is a form of therapy that helps you understand the deeper
+        layers of your mind—especially thoughts, emotions, and patterns you
+        might not even be aware of. It is based on the idea that many of our
+        feelings and behaviors are influenced by unconscious experiences, often
+        from childhood. Through open conversation in a safe and supportive
+        space, psychoanalysis helps you explore these hidden influences, uncover
+        unresolved emotions, and gain insight into why you think, feel, and act
+        the way you do. Unlike quick-fix approaches, psychoanalysis focuses on
+        long-term self-discovery and healing, allowing you to break free from
+        repeating patterns, overcome personal struggles, and develop a stronger
+        sense of self. It’s not just about treating symptoms—it’s about truly
+        understanding yourself and creating lasting change in your life.
       </p>
     </section>
   );
@@ -343,10 +361,11 @@ function CtaSection() {
         {/* cta */}
         <div className="border-1 border-primary rounded-lg relative text-center flex flex-col items-center 2xl:p-20 xl:p-18 lg:p-16 py-10  bg-primary-200">
           <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl">
-          Here for You, Anytime
+            Here for You, Anytime
           </h2>
           <p className="xl:text-xl lg:text-lg text-lg text-black lg:mt-4 lg:mb-8 mt-3 mb-6 lg:w-full w-[min(85%,450px)]">
-          You don’t have to figure it all out alone  — support is here, one click away.
+            You don’t have to figure it all out alone — support is here, one
+            click away.
           </p>
           <Button size="md" variant="primary" arrow>
             Book Now
