@@ -1,6 +1,7 @@
 "use client";
 import PageTitle from "@/components/global/PageTitle";
-import HaifaaBitarPortrait from "../../../public/haifaa-portrait-cropped.jpg";
+// import HaifaaBitarPortrait from "../../../public/haifaa-portrait-cropped.jpg";
+import HaifaaBitarPortrait from "../../../public/linkedin-portrait-shadow.jpg"
 import Image from "next/image";
 import Sparkle from "../../assets/sparkle.svg";
 import Button from "@/components/global/Button";
@@ -36,13 +37,13 @@ function About1() {
   const quoteInView = useInView(quoteRef, { once: true });
 
   return (
-    <section className="my-container flex flex-col md:flex-row justify-between items-center xl:gap-20 lg:gap-14 gap-10 overflow-hidden">
+    <section className="my-container flex flex-col md:flex-row justify-between md:items-end items-center xl:gap-20 lg:gap-14 gap-10 overflow-hidden">
       {/* image */}
       <motion.div
         initial={{ opacity: 0, y: "20%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
-        className="relative md:w-[33%] w-[min(80%,250px)] max-h-dvh"
+        className="relative md:w-[40%] w-[min(80%,300px)] max-h-dvh"
       >
         <Image
           src={HaifaaBitarPortrait}
@@ -59,7 +60,7 @@ function About1() {
       {/* text */}
       <div
         ref={quoteRef}
-        className="md:w-[66%] md:max-w-[unset] max-w-[450px] text-center md:text-start"
+        className="md:w-[60%] md:max-w-[unset] max-w-[450px] text-center md:text-start relative z-2"
       >
         {/* stars */}
         <motion.div
@@ -84,7 +85,7 @@ function About1() {
         </motion.div>
 
         {/* Quote */}
-        <p className="font-heading xl:text-5xl lg:text-4xl text-3xl leading-[1.2] mt-6 2xl:mb-32 lg:mb-24 mb-14 whitespace-pre flex flex-wrap justify-center md:justify-start">
+        <p className="font-heading xl:text-5xl lg:text-4xl text-3xl leading-[1.2] mt-6 2xl:mb-32 lg:mb-24 md:mb-14 whitespace-pre flex flex-wrap justify-center md:justify-start">
           {renderWords(
             `“Understanding oneself and one's own story is the most powerful tool a human can have.”`,
             quoteInView
@@ -92,7 +93,7 @@ function About1() {
         </p>
 
         {/* Stats */}
-        <div className="md:grid  md:grid-cols-2 flex md:justify-between justify-around flex-wrap gap-x-10 gap-y-14 md:gap-0">
+        <div className="md:grid  md:grid-cols-2 flex md:justify-between justify-around flex-wrap gap-x-10 gap-y-14 md:gap-0 2xl:mb-16 lg:mb-12 mb-7 ">
           <div className="space-y-2">
             <p className="font-heading xl:text-7xl lg:text-6xl text-5xl">
               {new Date().getFullYear() - 2012}+
