@@ -1,8 +1,11 @@
+"use client";
 import PageTitle from "@/components/global/PageTitle";
 import HaifaaBitarPortrait from "../../../public/haifaa-portrait-cropped.jpg";
 import Image from "next/image";
 import Sparkle from "../../assets/sparkle.svg";
 import Button from "@/components/global/Button";
+import { useRef } from "react";
+import { useInView, motion } from "motion/react";
 
 export default function AboutPage() {
   return (
@@ -14,11 +17,33 @@ export default function AboutPage() {
   );
 }
 
+function renderWords(text: string, inView: boolean) {
+  return text.split(" ").map((word, i) => (
+    <span key={i} className="overflow-hidden inline-block">
+      <motion.span
+        className={"inline-block"}
+        animate={inView ? { y: 0 } : { y: "100%" }}
+        transition={{ duration: 0.3, ease: "easeInOut", delay: i * 0.05 }}
+      >
+        {word}{" "}
+      </motion.span>
+    </span>
+  ));
+}
+
 function About1() {
+  const quoteRef = useRef<HTMLDivElement>(null);
+  const quoteInView = useInView(quoteRef, { once: true });
+
   return (
     <section className="my-container flex flex-col md:flex-row justify-between items-center xl:gap-20 lg:gap-14 gap-10 overflow-hidden">
       {/* image */}
-      <div className="relative md:w-[33%] w-[min(80%,250px)] max-h-dvh">
+      <motion.div
+        initial={{ opacity: 0, y: "20%" }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
+        className="relative md:w-[33%] w-[min(80%,250px)] max-h-dvh"
+      >
         <Image
           src={HaifaaBitarPortrait}
           placeholder="blur"
@@ -29,12 +54,21 @@ function About1() {
           className="w-[200%] absolute top-full left-1/2 -translate-1/2  h-10 rounded-[100%] bg-bg-color"
           style={{ boxShadow: "0px 0px 10px 20px var(--color-bg-color)" }}
         />
-      </div>
+      </motion.div>
 
       {/* text */}
-      <div className="md:w-[66%] md:max-w-[unset] max-w-[450px] text-center md:text-start">
+      <div
+        ref={quoteRef}
+        className="md:w-[66%] md:max-w-[unset] max-w-[450px] text-center md:text-start"
+      >
         {/* stars */}
-        <div className="flex gap-5 justify-center md:justify-start">
+        <motion.div
+          animate={
+            quoteInView ? { y: 0, opacity: 1 } : { y: "50%", opacity: 0 }
+          }
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="flex gap-5 justify-center md:justify-start"
+        >
           <Image
             src={Sparkle}
             alt=""
@@ -47,12 +81,14 @@ function About1() {
             aria-hidden
             className="xl:w-12 lg:w-10 w-8"
           />
-        </div>
+        </motion.div>
 
         {/* Quote */}
-        <p className="font-heading xl:text-5xl lg:text-4xl text-3xl leading-[1.2] mt-6 2xl:mb-32 lg:mb-24 mb-14">
-          “Understanding oneself and one's own story is the most powerful tool a
-          human can have.”
+        <p className="font-heading xl:text-5xl lg:text-4xl text-3xl leading-[1.2] mt-6 2xl:mb-32 lg:mb-24 mb-14 whitespace-pre flex flex-wrap justify-center md:justify-start">
+          {renderWords(
+            `“Understanding oneself and one's own story is the most powerful tool a human can have.”`,
+            quoteInView
+          )}
         </p>
 
         {/* Stats */}
@@ -76,14 +112,36 @@ function About1() {
 }
 
 function About2() {
+  const title1Ref = useRef<HTMLHeadingElement>(null);
+  const title2Ref = useRef<HTMLHeadingElement>(null);
+  const title3Ref = useRef<HTMLHeadingElement>(null);
+  const title4Ref = useRef<HTMLHeadingElement>(null);
+
+  const title1InView = useInView(title1Ref, { once: true });
+  const title2InView = useInView(title2Ref, { once: true });
+  const title3InView = useInView(title3Ref, { once: true });
+  const title4InView = useInView(title4Ref, { once: true });
+
   return (
     <section className="my-container xl:space-y-44 lg:space-y-36 space-y-28">
       {/* About Me */}
-      <div className="xl:w-4xl lg:w-3xl md:w-2xl">
-        <h2 className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4">
+      <div ref={title1Ref} className="xl:w-4xl lg:w-3xl md:w-2xl">
+        <motion.h2
+          animate={
+            title1InView
+              ? { rotateX: "0", opacity: 1, y: "0" }
+              : { rotateX: "90deg", opacity: 0, y: "50%" }
+          }
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4"
+        >
           About Me
-        </h2>
-        <p className="xl:text-xl lg:text-lg text-lg text-black">
+        </motion.h2>
+        <motion.p
+          animate={title1InView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="xl:text-xl lg:text-lg text-lg text-black"
+        >
           As a clinical psychologist, psychotherapist, and psychoanalyst, I work
           within the psychoanalytical approach, which allows access to your
           unconscious mind, which allows you to explore and understand yourself
@@ -99,15 +157,27 @@ function About2() {
           My goal is to offer you the space to explore and analyze yourself from
           an analytical perspective, to be able to grow beyond your challenges,
           take charge of your own life, and to achieve your own goals.
-        </p>
+        </motion.p>
       </div>
 
       {/* Education */}
-      <div className="xl:w-4xl lg:w-3xl md:w-2xl ">
-        <h2 className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4">
+      <div ref={title2Ref} className="xl:w-4xl lg:w-3xl md:w-2xl ">
+        <motion.h2
+          animate={
+            title2InView
+              ? { rotateX: "0", opacity: 1, y: "0" }
+              : { rotateX: "90deg", opacity: 0, y: "50%" }
+          }
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4"
+        >
           Education
-        </h2>
-        <div className="divide-black divide-y  xl:text-xl lg:text-lg text-lg text-black">
+        </motion.h2>
+        <motion.div
+          animate={title1InView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="divide-black divide-y  xl:text-xl lg:text-lg text-lg text-black"
+        >
           <div className="flex justify-between gap-14 py-3">
             <div className="md:grid md:grid-cols-5 md:w-full ">
               <p className="md:col-span-3 ">Training in Psychotherapy</p>
@@ -142,15 +212,27 @@ function About2() {
             </div>
             <p>2000</p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Certification */}
-      <div className="xl:w-4xl lg:w-3xl md:w-2xl ">
-        <h2 className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4">
+      <div ref={title3Ref} className="xl:w-4xl lg:w-3xl md:w-2xl ">
+        <motion.h2
+          animate={
+            title3InView
+              ? { rotateX: "0", opacity: 1, y: "0" }
+              : { rotateX: "90deg", opacity: 0, y: "50%" }
+          }
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4"
+        >
           Certification
-        </h2>
-        <div className="divide-black divide-y  xl:text-xl lg:text-lg text-lg text-black">
+        </motion.h2>
+        <motion.div
+          animate={title1InView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="divide-black divide-y  xl:text-xl lg:text-lg text-lg text-black"
+        >
           <div className="flex justify-between gap-14 py-3">
             <div className="md:grid md:grid-cols-5 md:w-full ">
               <p className="md:col-span-2 ">DHA License</p>
@@ -187,23 +269,36 @@ function About2() {
             </div>
             <p>2000</p>
           </div>
-        </div>
+        </motion.div>
       </div>
-      
 
       {/* What To Expect */}
-      <div className="xl:w-4xl lg:w-3xl md:w-2xl">
-        <h2 className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4">
+      <div ref={title4Ref} className="xl:w-4xl lg:w-3xl md:w-2xl">
+        <motion.h2
+          animate={
+            title4InView
+              ? { rotateX: "0", opacity: 1, y: "0" }
+              : { rotateX: "90deg", opacity: 0, y: "50%" }
+          }
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4"
+        >
           What To Expect
-        </h2>
-        <p className="xl:text-xl lg:text-lg text-lg text-black xl:mb-6 lg:mb-5 mb-4">
+        </motion.h2>
+        <motion.p
+          animate={title4InView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="xl:text-xl lg:text-lg text-lg text-black xl:mb-6 lg:mb-5 mb-4"
+        >
           Therapy is a collaborative journey. Through thoughtful dialogue and
           analysis, I guide patients toward self-discovery, emotional clarity,
           and personal transformation. My goal is to provide a safe and
           supportive space where individuals can explore their inner world,
           overcome challenges, and reclaim control over their lives.
-        </p>
-        <Button variant="secondary" arrow size="md">Book A Session</Button>
+        </motion.p>
+        <Button variant="secondary" arrow size="md">
+          Book A Session
+        </Button>
       </div>
     </section>
   );

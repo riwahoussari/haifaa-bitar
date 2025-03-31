@@ -1,4 +1,3 @@
-import { HTMLAttributes } from "react";
 
 type ArrowSvgProps = {
   strokeWidth?: number;

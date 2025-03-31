@@ -1,7 +1,10 @@
+"use client";
 import Button from "@/components/global/Button";
 import Image from "next/image";
 import DecorativeCorner from "../../assets/decorative-corner.svg";
 import PageTitle from "@/components/global/PageTitle";
+import { useRef } from "react";
+import { useInView, motion } from "motion/react";
 
 export default function ContactPage() {
   return (
@@ -13,10 +16,24 @@ export default function ContactPage() {
 }
 
 function ContactSection() {
+  const card1Ref = useRef<HTMLDivElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
+  const card3Ref = useRef<HTMLDivElement>(null);
+  const card1InView = useInView(card1Ref, { once: true });
+  const card2InView = useInView(card2Ref, { once: true });
+  const card3InView = useInView(card3Ref, { once: true });
+
   return (
     <section className="my-container flex flex-col lg:flex-row 2xl:gap-16 xl:gap-12 lg:gap-8 gap-8">
       {/* form */}
-      <div className=" relative bg-primary-200 border-1 border-primary rounded-lg lg:w-1/2 w-[min(100%,600px)] mx-auto 2xl:p-18 xl:p-16 lg:p-14 md:p-14 sm:p-12 px-10 py-14">
+      <motion.div
+        ref={card1Ref}
+        animate={
+          card1InView ? { y: 0, opacity: 1 } : { y: "150px", opacity: 0.2 }
+        }
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className=" relative bg-primary-200 border-1 border-primary rounded-lg lg:w-1/2 w-[min(100%,600px)] mx-auto 2xl:p-18 xl:p-16 lg:p-14 md:p-14 sm:p-12 px-10 py-14"
+      >
         <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl 2xl:mb-10 xl:mb-9 lg:mb-8 mb-6">
           Share A Message
         </h2>
@@ -75,24 +92,39 @@ function ContactSection() {
           aria-hidden
           className="absolute 2xl:w-[150px] xl:w-[135px] lg:w-[120px] w-[105px] 2xl:bottom-5 xl:bottom-4 lg:bottom-3 bottom-2 2xl:right-5 xl:right-4 lg:right-3 right-2 rotate-180 "
         />
-      </div>
+      </motion.div>
 
       {/* Contact Links */}
       <div className="flex flex-col 2xl:gap-16 xl:gap-12 lg:gap-8 gap-8 lg:w-1/2 w-[min(100%,600px)] mx-auto">
         {/* whatsapp */}
-        <div className="h-full border-1 border-primary rounded-lg relative text-center flex flex-col items-center justify-center 2xl:p-20 xl:p-18 lg:p-16 py-10 px-6">
+        <motion.div
+          ref={card2Ref}
+          animate={
+            card2InView ? { y: 0, opacity: 1 } : { y: "100px", opacity: 0.2 }
+          }
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="h-full border-1 border-primary rounded-lg relative text-center flex flex-col items-center justify-center 2xl:p-20 xl:p-18 lg:p-16 py-10 px-6"
+        >
           <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl mb-6 flex flex-wrap justify-center whitespace-pre">
-            <span>Whatsapp </span><span>(03 404 129)</span>
+            <span>Whatsapp </span>
+            <span>(03 404 129)</span>
           </h2>
           <a href="https://wa.me/9613404129" target="_blank">
             <Button size="md" variant="primary" arrow>
               Get In Touch
             </Button>
           </a>
-        </div>
+        </motion.div>
 
         {/* email */}
-        <div className="h-full border-1 border-primary rounded-lg relative text-center flex flex-col items-center justify-center 2xl:p-20 xl:p-18 lg:p-16 py-10 px-6">
+        <motion.div
+          ref={card3Ref}
+          animate={
+            card3InView ? { y: 0, opacity: 1 } : { y: "100px", opacity: 0.2 }
+          }
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="h-full border-1 border-primary rounded-lg relative text-center flex flex-col items-center justify-center 2xl:p-20 xl:p-18 lg:p-16 py-10 px-6"
+        >
           <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl mb-6">
             Email (hayfaabigab258@gmail.com)
           </h2>
@@ -101,7 +133,7 @@ function ContactSection() {
               Get In Touch
             </Button>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -60,7 +60,7 @@ export default function RootLayout({
 
         {/*  */}
         <Navbar />
-        <main className="space-y-60 lg:space-y-72 xl:space-y-80 mb-40 lg:mb-72 xl:mb-80 ">
+        <main className="space-y-40 lg:space-y-52 xl:space-y-60 mb-40 lg:mb-52 xl:mb-60 ">
           {children}
         </main>
         <Footer />
