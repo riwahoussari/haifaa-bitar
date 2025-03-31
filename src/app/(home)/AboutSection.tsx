@@ -4,6 +4,7 @@ import DecorativeLine from "../../assets/decorative-line.svg";
 import HaifaaBitarPortrait from "../../../public/haifaa-portrait.jpg";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
+import AnimatedCounter from "@/components/global/AnimatedCounter";
 
 export default function AboutSection() {
   const title1Ref = useRef<HTMLHeadingElement>(null);
@@ -44,11 +45,11 @@ export default function AboutSection() {
 
       {/* text */}
       <div className="text-center lg:w-[50%] lg:space-y-[50vh] lg:py-[50vh] space-y-40 py-20 w-[min(100%,500px)] xl:text-xl lg:text-lg text-lg leading-[160%]">
+        {/* About me */}
         <div
           ref={title1Ref}
           className="lg:w-[95%] ms-auto lg:space-y-12 space-y-8"
         >
-          {/* About me */}
           <motion.h2
             animate={
               title1InView
@@ -116,13 +117,18 @@ export default function AboutSection() {
         <div className="w-[95%] lg:ms-auto mx-auto lg:mx-0 space-y-32">
           <div className="space-y-6">
             <h2 className="font-heading xl:text-8xl lg:text-7xl text-6xl">
-              {new Date().getFullYear() - 2012}+
+              <AnimatedCounter
+                from={0}
+                to={new Date().getFullYear() - 2012}
+                duration={0.8}
+              />
+              +
             </h2>
             <p>Years of Experience</p>
           </div>
           <div className="space-y-6">
             <h2 className="font-heading xl:text-8xl lg:text-7xl text-6xl">
-              1000+
+              <AnimatedCounter from={0} to={1000} duration={1.2} />+
             </h2>
             <p>Sessions Delivered</p>
           </div>

@@ -1,12 +1,13 @@
 "use client";
 import PageTitle from "@/components/global/PageTitle";
 // import HaifaaBitarPortrait from "../../../public/haifaa-portrait-cropped.jpg";
-import HaifaaBitarPortrait from "../../../public/linkedin-portrait-shadow.jpg"
+import HaifaaBitarPortrait from "../../../public/linkedin-portrait-shadow.jpg";
 import Image from "next/image";
 import Sparkle from "../../assets/sparkle.svg";
 import Button from "@/components/global/Button";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
+import AnimatedCounter from "@/components/global/AnimatedCounter";
 
 export default function AboutPage() {
   return (
@@ -96,13 +97,18 @@ function About1() {
         <div className="md:grid  md:grid-cols-2 flex md:justify-between justify-around flex-wrap gap-x-10 gap-y-14 md:gap-0 2xl:mb-16 lg:mb-12 mb-7 ">
           <div className="space-y-2">
             <p className="font-heading xl:text-7xl lg:text-6xl text-5xl">
-              {new Date().getFullYear() - 2012}+
+              <AnimatedCounter
+                from={0}
+                to={new Date().getFullYear() - 2012}
+                duration={0.8}
+              />
+              +
             </p>
             <p className="xl:text-xl lg:text-lg text-lg">Years of Experience</p>
           </div>
           <div className="space-y-2">
             <p className="font-heading xl:text-7xl lg:text-6xl text-5xl">
-              1000+
+              <AnimatedCounter from={0} to={1000} duration={1.2} />+
             </p>
             <p className="xl:text-xl lg:text-lg text-lg">Sessions Delivered</p>
           </div>
