@@ -73,7 +73,7 @@ export default function Navbar() {
   return (
     <motion.header
       className={
-        "bg-bg-color/50 sticky top-0 z-10 w-full border-b border-[rgba(0,0,0,0.2)] text-black lg:text-base " +
+        "bg-bg-color/50  sticky top-0 z-10 w-full border-b border-[rgba(0,0,0,0.2)] text-black lg:text-base " +
         (mobileMenuOpen ? "sm:backdrop-blur-md" : " backdrop-blur-md")
       }
       initial={{ y: "-100%" }}

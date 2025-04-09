@@ -22,7 +22,7 @@ export default function PageTitle({ children }: { children: string }) {
         initial={{ opacity: 0, y: "-20%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
-        className="absolute 2xl:w-[200px] xl:w-[180px] lg:w-[160px] w-[140px] top-0 left-0"
+        className="absolute select-none 2xl:w-[200px] xl:w-[180px] lg:w-[160px] w-[140px] top-0 left-0"
       >
         <Image src={DecorativeCorner} alt="" aria-hidden />
       </motion.div>
@@ -30,7 +30,7 @@ export default function PageTitle({ children }: { children: string }) {
         initial={{ opacity: 0, y: "-20%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
-        className="absolute 2xl:w-[200px] xl:w-[180px] lg:w-[160px] w-[140px] bottom-0 right-0 rotate-180"
+        className="absolute select-none 2xl:w-[200px] xl:w-[180px] lg:w-[160px] w-[140px] bottom-0 right-0 rotate-180"
       >
         <Image src={DecorativeCorner} alt="" aria-hidden />
       </motion.div>

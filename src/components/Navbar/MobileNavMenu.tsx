@@ -41,7 +41,7 @@ export default function MobileNavMenu({
           initial="initial"
           animate="enter"
           exit="exit"
-          className="bg-dark-beige/50 absolute left-0 right-0 top-0 z-0 pb-6 pt-20 text-black shadow-lg backdrop-blur-xl lg:hidden"
+          className="bg-bg-color  absolute left-0 right-0 top-0 z-0 pb-6 pt-20 text-black shadow-lg backdrop-blur-xl lg:hidden"
         >
           <nav>
             {PAGES.map((page, i) => (

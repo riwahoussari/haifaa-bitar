@@ -5,7 +5,6 @@ import DecorativeCorner from "../../assets/decorative-corner.svg";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
-
 function renderWords(text: string, inView: boolean) {
   return text.split(" ").map((word, i) => (
     <span key={i} className="overflow-hidden inline-block">
@@ -35,7 +34,11 @@ export default function QuoteSection() {
           sectionInView
         )}
       </h2>
-      <motion.p animate={sectionInView ? {opacity: 1} : {opacity: 0.5}} transition={{duration: 0.5, ease: "easeInOut", delay: 0.2}} className="2xl:text-3xl lg:text-2xl text-2xl font-light opacity-50 text-end sm:w-[70%] w-[80%] mx-auto">
+      <motion.p
+        animate={sectionInView ? { opacity: 1 } : { opacity: 0.5 }}
+        transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
+        className="2xl:text-3xl lg:text-2xl text-2xl font-light opacity-50 text-end sm:w-[70%] w-[80%] mx-auto"
+      >
         - Lemony Snicket
       </motion.p>
 
@@ -45,7 +48,7 @@ export default function QuoteSection() {
           sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: "-20%" }
         }
         transition={{ duration: 0.4, ease: "easeInOut", delay: 0.4 }}
-        className="absolute 2xl:w-[200px] xl:w-[180px] lg:w-[160px] w-[140px] top-0 left-0"
+        className="absolute 2xl:w-[200px] xl:w-[180px] lg:w-[160px] w-[140px] top-0 left-0 select-none -z-1"
       >
         <Image src={DecorativeCorner} alt="" aria-hidden />
       </motion.div>
@@ -54,7 +57,7 @@ export default function QuoteSection() {
           sectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: "-20%" }
         }
         transition={{ duration: 0.4, ease: "easeInOut", delay: 0.4 }}
-        className="absolute 2xl:w-[200px] xl:w-[180px] lg:w-[160px] w-[140px] bottom-0 right-0 rotate-180"
+        className="absolute 2xl:w-[200px] xl:w-[180px] lg:w-[160px] w-[140px] bottom-0 right-0 select-none -z-1 rotate-180"
       >
         <Image src={DecorativeCorner} alt="" aria-hidden />
       </motion.div>

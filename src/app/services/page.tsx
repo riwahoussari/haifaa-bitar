@@ -60,15 +60,15 @@ function OnlineTherapy() {
           src={Sparkle}
           alt=""
           aria-hidden
-          className="xl:w-[60px] lg:w-12 w-9"
+          className="xl:w-[60px] lg:w-12 w-9 select-none"
         />
         <h2 className="font-heading xl:text-6xl lg:text-5xl text-[max(5vw,36px)] leading-[100%]">
-          Online Therapy Sessions
+          Online Psychoanalytic Sessions
         </h2>
       </motion.div>
 
       {/* row 1 */}
-      <div className="lg:grid grid-cols-2 justify-items-center flex flex-col-reverse w-[min(96%,600px)] lg:w-full mx-auto 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
+      <div className="lg:grid grid-cols-12 justify-items-center flex flex-col-reverse w-[min(96%,600px)] lg:w-full mx-auto 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
         {/* text */}
         <motion.div
           ref={card1Ref}
@@ -76,15 +76,10 @@ function OnlineTherapy() {
             card1InView ? { y: 0, opacity: 1 } : { y: "100px", opacity: 0.2 }
           }
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="rounded-lg border-1 border-primary 2xl:p-8 xl:p-7 lg:p-6 p-4 col-span-1"
+          className="rounded-lg border-1 border-primary 2xl:p-8 xl:p-7 lg:p-6 p-4 col-span-7"
         >
           <p className="xl:text-xl lg:text-lg text-base leading-[160%] opacity-80">
-            Online therapy offers the same level of professional support as
-            in-person sessions, allowing you to receive guidance from the
-            comfort of your home. Whether you’re struggling with anxiety,
-            depression, trauma, OCD, or personal challenges, online therapy
-            provides a safe space to explore your emotions and develop deeper
-            self-awareness.
+          Engage in the analytic process from the privacy of your own space. Online sessions offer a secure and confidential frame where your speech can unfold freely—without interruption, judgment, or pressure. Whether you’re struggling with anxiety, emotional pain, obsessive thoughts, or trauma, this setting allows the work to continue across distances, offering consistency and depth as we listen together to what your unconscious reveals.
           </p>
         </motion.div>
 
@@ -95,7 +90,7 @@ function OnlineTherapy() {
             card4InView ? { y: 0, opacity: 1 } : { y: "50px", opacity: 0.2 }
           }
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="lg:w-[500px] w-full max-w-[400px] mx-auto lg:mx-0"
+          className="lg:w-[500px] w-full max-w-[400px] mx-auto lg:mx-0 col-span-5"
         >
           <Image
             src={IllustrationOnlineTherapy}
@@ -198,15 +193,15 @@ function ClinicalTherapy() {
           src={Sparkle}
           alt=""
           aria-hidden
-          className="xl:w-[60px] lg:w-12 w-9"
+          className="xl:w-[60px] lg:w-12 w-9 select-none"
         />
         <h2 className="font-heading xl:text-6xl lg:text-5xl text-[max(5vw,36px)] leading-[100%]">
-          Clinical Therapy Sessions
+          In-Person Psychoanalytic Sessions
         </h2>
       </motion.div>
 
       {/* row 1 */}
-      <div className="lg:grid grid-cols-2 justify-items-center flex flex-col w-[min(96%,600px)] lg:w-full mx-auto 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
+      <div className="lg:grid grid-cols-12 justify-items-center flex flex-col w-[min(96%,600px)] lg:w-full mx-auto 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
         {/* illustration */}
         <motion.div
           ref={card4Ref}
@@ -214,7 +209,7 @@ function ClinicalTherapy() {
             card4InView ? { y: 0, opacity: 1 } : { y: "50px", opacity: 0.2 }
           }
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="lg:w-[500px] w-full max-w-[400px] mx-auto lg:mx-0"
+          className="lg:w-[500px] w-full max-w-[400px] mx-auto lg:mx-0 col-span-5"
         >
           <Image
             src={IllustrationClinicalTherapy}
@@ -230,14 +225,10 @@ function ClinicalTherapy() {
             card1InView ? { y: 0, opacity: 1 } : { y: "100px", opacity: 0.2 }
           }
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="rounded-lg border-1 border-primary 2xl:p-8 xl:p-7 lg:p-6 p-4 col-span-1"
+          className="rounded-lg border-1 border-primary 2xl:p-8 xl:p-7 lg:p-6 p-4 col-span-7"
         >
           <p className="xl:text-xl lg:text-lg text-base leading-[160%] opacity-80">
-            For those who prefer face-to-face interaction, in-clinic therapy
-            sessions provide a private and comfortable setting to explore
-            personal challenges. Meeting in person allows for a deeper
-            therapeutic connection, helping you process emotions, overcome
-            difficulties, and gain clarity in your life.
+          In the quiet of the consulting room, face-to-face sessions offer a dedicated space where speech can take shape. Here, you are invited to explore what lies beneath the surface of your suffering. This is not simply “talk therapy,” but an encounter with yourself—through language, silence, and the unsaid. It is a space where symptoms begin to shift, and meaning begins to emerge.
           </p>
         </motion.div>
       </div>
@@ -312,7 +303,7 @@ function CtaSection() {
 
   return (
     <section className="flex flex-col items-center relative my-container py-10">
-      <div className="flex justify-center gap-3">
+      <div className="flex justify-center gap-3 select-none">
         <Image
           src={DecorativeLine}
           alt=""

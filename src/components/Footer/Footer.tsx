@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary-200 border-t-1 border-primary flex flex-col justify-between gap-20 pt-16 min-h-dvh">
       {/* decorative lines */}
-      <div className="flex justify-center gap-3">
+      <div className="flex justify-center gap-3 select-none">
         <Image
           src={DecorativeLine}
           alt=""

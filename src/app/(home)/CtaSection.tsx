@@ -25,6 +25,21 @@ export default function CtaSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="border-1 border-primary rounded-lg relative text-center flex flex-col items-center 2xl:p-20 xl:p-18 lg:p-16 py-10  bg-primary-200"
         >
+          {/* decorative corners */}
+          <Image
+            src={DecorativeCorner}
+            alt=""
+            aria-hidden
+            className="absolute select-none 2xl:w-[150] xl:w-[135px] lg:w-[120px] w-[105px] 2xl:top-5 xl:top-4 lg:top-3 top-2 2xl:left-5 xl:left-4 lg:left-3 left-2 "
+          />
+          <Image
+            src={DecorativeCorner}
+            alt=""
+            aria-hidden
+            className="absolute select-none 2xl:w-[150px] xl:w-[135px] lg:w-[120px] w-[105px] 2xl:bottom-5 xl:bottom-4 lg:bottom-3 bottom-2 2xl:right-5 xl:right-4 lg:right-3 right-2 rotate-180 "
+          />
+
+          {/* content */}
           <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl">
             Here for You, Anytime
           </h2>
@@ -35,20 +50,6 @@ export default function CtaSection() {
           <Button size="md" variant="primary" arrow>
             Book Now
           </Button>
-
-          {/* decorative corners */}
-          <Image
-            src={DecorativeCorner}
-            alt=""
-            aria-hidden
-            className="absolute 2xl:w-[150] xl:w-[135px] lg:w-[120px] w-[105px] 2xl:top-5 xl:top-4 lg:top-3 top-2 2xl:left-5 xl:left-4 lg:left-3 left-2 "
-          />
-          <Image
-            src={DecorativeCorner}
-            alt=""
-            aria-hidden
-            className="absolute 2xl:w-[150px] xl:w-[135px] lg:w-[120px] w-[105px] 2xl:bottom-5 xl:bottom-4 lg:bottom-3 bottom-2 2xl:right-5 xl:right-4 lg:right-3 right-2 rotate-180 "
-          />
         </motion.div>
 
         {/* clinic photo */}
@@ -78,9 +79,9 @@ export default function CtaSection() {
       <motion.div
         ref={card3Ref}
         animate={
-            card3InView ? { y: 0, opacity: 1 } : { y: "100px", opacity: 0.2 }
-          }
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          card3InView ? { y: 0, opacity: 1 } : { y: "100px", opacity: 0.2 }
+        }
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         className="border-1 border-primary rounded-lg lg:w-1/2 w-[min(100%,600px)] mx-auto 2xl:p-16 xl:p-14 lg:p-12 p-6"
       >
         <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl 2xl:mb-10 xl:mb-9 lg:mb-8 mb-6">

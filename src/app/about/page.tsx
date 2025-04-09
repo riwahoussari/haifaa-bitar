@@ -5,7 +5,7 @@ import HaifaaBitarPortrait from "../../../public/linkedin-portrait-shadow.jpg";
 import Image from "next/image";
 import Sparkle from "../../assets/sparkle.svg";
 import Button from "@/components/global/Button";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useInView, motion } from "motion/react";
 import AnimatedCounter from "@/components/global/AnimatedCounter";
 
@@ -69,7 +69,7 @@ function About1() {
             quoteInView ? { y: 0, opacity: 1 } : { y: "50%", opacity: 0 }
           }
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="flex gap-5 justify-center md:justify-start"
+          className="flex select-none gap-5 justify-center md:justify-start"
         >
           <Image
             src={Sparkle}
@@ -86,7 +86,7 @@ function About1() {
         </motion.div>
 
         {/* Quote */}
-        <p className="font-heading xl:text-5xl lg:text-4xl text-3xl leading-[1.2] mt-6 2xl:mb-32 lg:mb-24 md:mb-14 whitespace-pre flex flex-wrap justify-center md:justify-start">
+        <p className="font-heading xl:text-5xl lg:text-4xl text-3xl leading-[1.2] mt-6 2xl:mb-32 lg:mb-24 md:mb-14 mb-10 whitespace-pre flex flex-wrap justify-center md:justify-start">
           {renderWords(
             `“Understanding oneself and one's own story is the most powerful tool a human can have.”`,
             quoteInView
@@ -104,13 +104,15 @@ function About1() {
               />
               +
             </p>
-            <p className="xl:text-xl lg:text-lg text-lg">Years of Experience</p>
+            <p className="xl:text-xl lg:text-lg opacity-70">
+              Years of Experience
+            </p>
           </div>
           <div className="space-y-2">
             <p className="font-heading xl:text-7xl lg:text-6xl text-5xl">
-              <AnimatedCounter from={0} to={1000} duration={1.2} />+
+              <AnimatedCounter from={0} to={12000} duration={1.2} />+
             </p>
-            <p className="xl:text-xl lg:text-lg text-lg">Sessions Delivered</p>
+            <p className="xl:text-xl lg:text-lg opacity-70">Clinical Hours</p>
           </div>
         </div>
       </div>
@@ -123,11 +125,15 @@ function About2() {
   const title2Ref = useRef<HTMLHeadingElement>(null);
   const title3Ref = useRef<HTMLHeadingElement>(null);
   const title4Ref = useRef<HTMLHeadingElement>(null);
+  const title5Ref = useRef<HTMLHeadingElement>(null);
 
   const title1InView = useInView(title1Ref, { once: true });
   const title2InView = useInView(title2Ref, { once: true });
   const title3InView = useInView(title3Ref, { once: true });
   const title4InView = useInView(title4Ref, { once: true });
+  const title5InView = useInView(title5Ref, { once: true });
+
+  const [showMore, setShowMore] = useState(false);
 
   return (
     <section className="my-container xl:space-y-44 lg:space-y-36 space-y-28">
@@ -167,7 +173,7 @@ function About2() {
         </motion.p>
       </div>
 
-      {/* Education */}
+      {/* Recent Work Experience */}
       <div ref={title2Ref} className="xl:w-4xl lg:w-3xl md:w-2xl ">
         <motion.h2
           animate={
@@ -178,51 +184,190 @@ function About2() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4"
         >
-          Education
+          Recent Work Experience
         </motion.h2>
         <motion.div
-          animate={title1InView ? { opacity: 1 } : { opacity: 0 }}
+          animate={title2InView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="divide-black divide-y  xl:text-xl lg:text-lg text-lg text-black"
+          className={`divide-black divide-y xl:text-xl lg:text-lg text-lg text-black grid content-center ${showMore? "grid-rows-11" : "grid-rows-6"} `}
         >
-          <div className="flex justify-between gap-14 py-3">
-            <div className="md:grid md:grid-cols-5 md:w-full ">
-              <p className="md:col-span-3 ">Training in Psychotherapy</p>
-              <p className="md:col-span-2 md:text-lg text-sm opacity-70 md:opacity-100"></p>
-            </div>
-            <p>2024</p>
-          </div>
-          <div className="flex justify-between gap-14 py-3">
-            <div className="md:grid md:grid-cols-5 md:w-full">
-              <p className="md:col-span-3 ">
-                Training in Lacanian Psychoanalysis
+          {/* 1 */}
+          <div className=" grid grid-cols-12 gap-4 md:gap-14 py-3">
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">
+                Clinical Psychologist & Psychoanalyst
               </p>
-              <p className="md:col-span-2 md:text-lg text-sm opacity-70 md:opacity-100"></p>
-            </div>
-            <p>2019</p>
-          </div>
-          <div className="flex justify-between gap-14 py-3">
-            <div className="md:grid md:grid-cols-5 md:w-full">
-              <p className="md:col-span-3 ">Masters in Clinical Psychology</p>
-              <p className="md:col-span-2 md:text-lg text-sm opacity-70 md:opacity-100">
-                Lebanese University
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Private Clinic
               </p>
             </div>
-            <p>2000</p>
+
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2015
+              <span className="text-sm opacity-70">
+                <br />
+                till present
+              </span>
+            </p>
           </div>
-          <div className="flex justify-between gap-14 py-3">
-            <div className="md:grid md:grid-cols-5 md:w-full">
-              <p className="md:col-span-3 ">Bachelor's of Psychology</p>
-              <p className="md:col-span-2 md:text-lg text-sm opacity-70 md:opacity-100">
-                Lebanese University
+
+          {/* 2 */}
+          <div className=" grid grid-cols-12 gap-4 md:gap-14 py-3">
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">Psychoanalyst</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Being Center L.C.T.C
               </p>
             </div>
-            <p>2000</p>
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2021
+              <span className="text-sm opacity-70">
+                <br />
+                till present
+              </span>
+            </p>
+          </div>
+
+          {/* 3 */}
+          <div className=" grid grid-cols-12 gap-4 md:gap-14 py-3">
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">Psychologist</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Talktime Dubai
+              </p>
+            </div>
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2021
+              <span className="text-sm opacity-70">
+                <br />
+                till present
+              </span>
+            </p>
+          </div>
+
+          {/* 4 */}
+          <div className=" grid grid-cols-12 gap-4 md:gap-14 py-3">
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">
+                Consultant & Clinical Psychologist
+              </p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Intersos - South
+              </p>
+            </div>
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2023
+            </p>
+          </div>
+
+          {/* 5 */}
+          <div className=" grid grid-cols-12 gap-4 md:gap-14 py-3">
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">
+                Head Psychotherapist & Mental Health Trainer
+              </p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Amurt - Chouf
+              </p>
+            </div>
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2019 - 2022
+            </p>
+          </div>
+
+          {/* 6 */}
+          <div
+            style={{ display: showMore ? "grid" : "none" }}
+            className=" grid grid-cols-12 gap-4 md:gap-14 py-3"
+          >
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">School Psychologist</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Mabarrat Alimam Alrida
+              </p>
+            </div>
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2016 - 2020
+            </p>
+          </div>
+
+          {/* 7 */}
+          <div
+            style={{ display: showMore ? "grid" : "none" }}
+            className=" grid grid-cols-12 gap-4 md:gap-14 py-3"
+          >
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">Psychologist & Consultant</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Sesobel - Nabatieh
+              </p>
+            </div>
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2016 - 2023
+            </p>
+          </div>
+
+          {/* 8 */}
+          <div
+            style={{ display: showMore ? "grid" : "none" }}
+            className=" grid grid-cols-12 gap-4 md:gap-14 py-3"
+          >
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">School Psychologist</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Mabarrat Al Kher - Bint Jbeil
+              </p>
+            </div>
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2018 - 2020
+            </p>
+          </div>
+
+          {/* 9 */}
+          <div
+            style={{ display: showMore ? "grid" : "none" }}
+            className=" grid grid-cols-12 gap-4 md:gap-14 py-3"
+          >
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">Psychologist</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Crea Center
+              </p>
+            </div>
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2013 - 2017
+            </p>
+          </div>
+
+          {/* 10 */}
+          <div
+            style={{ display: showMore ? "grid" : "none" }}
+            className=" grid grid-cols-12 gap-4 md:gap-14 py-3"
+          >
+            <div className="md:grid md:grid-cols-6 md:w-full col-span-9 md:col-span-10 ">
+              <p className="md:col-span-4 ">Psychologist</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60">
+                Sos - Sfaray
+              </p>
+            </div>
+            <p className="col-span-3 md:col-span-2 text-end opacity-60 text-base">
+              2015
+            </p>
+          </div>
+
+          {/* show more / less */}
+          <div
+            className="border-b-1 hover:bg-black hover:text-white duration-200 ease-in-out cursor-pointer  flex justify-center items-center"
+            onClick={() => setShowMore((prev) => !prev)}
+          >
+            <p className=" py-3 text-center ">
+              {showMore ? "Show Less" : "See More"}
+            </p>
           </div>
         </motion.div>
       </div>
 
-      {/* Certification */}
+      {/* Education */}
       <div ref={title3Ref} className="xl:w-4xl lg:w-3xl md:w-2xl ">
         <motion.h2
           animate={
@@ -233,54 +378,54 @@ function About2() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4"
         >
-          Certification
+          Education
         </motion.h2>
         <motion.div
-          animate={title1InView ? { opacity: 1 } : { opacity: 0 }}
+          animate={title3InView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="divide-black divide-y  xl:text-xl lg:text-lg text-lg text-black"
         >
           <div className="flex justify-between gap-14 py-3">
             <div className="md:grid md:grid-cols-5 md:w-full ">
-              <p className="md:col-span-2 ">DHA License</p>
-              <p className="md:col-span-3 md:text-lg text-sm opacity-70 md:opacity-100">
-                Forum Du Champ Lacanien Du Liban
+              <p className="md:col-span-3 ">Training in Psychotherapy</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60 ">
+                Being Center
               </p>
             </div>
-            <p>2024</p>
+            <p className="opacity-60">2019</p>
           </div>
           <div className="flex justify-between gap-14 py-3">
             <div className="md:grid md:grid-cols-5 md:w-full">
-              <p className="md:col-span-2 ">MOH License</p>
-              <p className="md:col-span-3 md:text-lg text-sm opacity-70 md:opacity-100">
-                Lebanese Ministry of Health
+              <p className="md:col-span-3 ">
+                Training in Lacanian Psychoanalysis
               </p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60 "></p>
             </div>
-            <p>2019</p>
+            <p className="opacity-60">2018</p>
           </div>
           <div className="flex justify-between gap-14 py-3">
             <div className="md:grid md:grid-cols-5 md:w-full">
-              <p className="md:col-span-2 ">Member of LOPsy</p>
-              <p className="md:col-span-3 md:text-lg text-sm opacity-70 md:opacity-100">
-                Lebanese Order of Psychologists
+              <p className="md:col-span-3 ">Masters in Clinical Psychology</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60 ">
+                Lebanese University
               </p>
             </div>
-            <p>2000</p>
+            <p className="opacity-60">2016</p>
           </div>
           <div className="flex justify-between gap-14 py-3">
             <div className="md:grid md:grid-cols-5 md:w-full">
-              <p className="md:col-span-2 ">Member of FCLL</p>
-              <p className="md:col-span-3 md:text-lg text-sm opacity-70 md:opacity-100">
-                Forum Du Champ Lacanien Du Liban
+              <p className="md:col-span-3 ">Bachelor's of Psychology</p>
+              <p className="md:col-span-2 md:text-lg text-sm opacity-60 ">
+                Lebanese University
               </p>
             </div>
-            <p>2000</p>
+            <p className="opacity-60">2012</p>
           </div>
         </motion.div>
       </div>
 
-      {/* What To Expect */}
-      <div ref={title4Ref} className="xl:w-4xl lg:w-3xl md:w-2xl">
+      {/* Certification */}
+      <div ref={title4Ref} className="xl:w-4xl lg:w-3xl md:w-2xl ">
         <motion.h2
           animate={
             title4InView
@@ -290,10 +435,63 @@ function About2() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4"
         >
+          Certification
+        </motion.h2>
+        <motion.div
+          animate={title4InView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="divide-black divide-y  xl:text-xl lg:text-lg text-lg text-black"
+        >
+          <div className="flex justify-between gap-14 py-3">
+            <div className="md:grid md:grid-cols-5 md:w-full ">
+              <p className="md:col-span-2 ">DHA License</p>
+              <p className="md:col-span-3 md:text-lg text-sm opacity-60">
+                Forum Du Champ Lacanien Du Liban
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-between gap-14 py-3">
+            <div className="md:grid md:grid-cols-5 md:w-full">
+              <p className="md:col-span-2 ">MOH License</p>
+              <p className="md:col-span-3 md:text-lg text-sm opacity-60">
+                Lebanese Ministry of Health
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-between gap-14 py-3">
+            <div className="md:grid md:grid-cols-5 md:w-full">
+              <p className="md:col-span-2 ">Member of LOPsy</p>
+              <p className="md:col-span-3 md:text-lg text-sm opacity-60">
+                Lebanese Order of Psychologists
+              </p>
+            </div>
+          </div>
+          <div className="flex justify-between gap-14 py-3">
+            <div className="md:grid md:grid-cols-5 md:w-full">
+              <p className="md:col-span-2 ">Member of FCLL</p>
+              <p className="md:col-span-3 md:text-lg text-sm opacity-60">
+                Forum Du Champ Lacanien Du Liban
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* What To Expect */}
+      <div ref={title5Ref} className="xl:w-4xl lg:w-3xl md:w-2xl">
+        <motion.h2
+          animate={
+            title5InView
+              ? { rotateX: "0", opacity: 1, y: "0" }
+              : { rotateX: "90deg", opacity: 0, y: "50%" }
+          }
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="font-heading xl:text-5xl lg:text-4xl text-4xl xl:mb-6 lg:mb-5 mb-4"
+        >
           What To Expect
         </motion.h2>
         <motion.p
-          animate={title4InView ? { opacity: 1 } : { opacity: 0 }}
+          animate={title5InView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="xl:text-xl lg:text-lg text-lg text-black xl:mb-6 lg:mb-5 mb-4"
         >

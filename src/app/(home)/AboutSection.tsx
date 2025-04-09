@@ -25,7 +25,7 @@ export default function AboutSection() {
         />
 
         <div
-          className="lg:hidde absolute top-full w-full -translate-y-1/2 bg-bg-color flex justify-center gap-3"
+          className="lg:hidde absolute top-full w-full -translate-y-1/2 bg-bg-color flex justify-center gap-3 select-none"
           style={{ boxShadow: "0px 0px 10px 10px var(--color-bg-color)" }}
         >
           <Image
@@ -65,7 +65,8 @@ export default function AboutSection() {
             animate={title1InView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-            With over a decade of experience in clinical psychology and
+            With over 13 years of experience and more than 12,000 hours of
+            clinical work in psychology and{" "}
             <a
               href="#what-is-psychoanalysis"
               className="underline hover:[text-decoration:none]"
@@ -73,12 +74,19 @@ export default function AboutSection() {
               {" "}
               psychoanalysis
             </a>
-            , I specialize in helping individuals gain a deeper understanding of
-            themselves and their life experiences.
+            , I accompany individuals through a transformative process of
+            self-discovery. My work is grounded in psychoanalytic practice,
+            which takes into account the unconscious dimensions of
+            suffering—those that escape simple explanation yet shape the most
+            intimate aspects of our lives.
             <br />
-            <br />
-            My approach is rooted in psychoanalysis, offering a space for
-            self-exploration that leads to healing and personal growth.
+            <br />I believe each person carries a singular story, marked by
+            early experiences, language, and desire. In the analytic space, you
+            are invited to speak freely, without censorship or judgment, in
+            order to explore what lies beneath the surface of symptoms,
+            repetition, and emotional pain. This work does not seek to
+            normalize, but to listen—to what insists, returns, and demands to be
+            heard.
           </motion.p>
         </div>
 
@@ -102,14 +110,19 @@ export default function AboutSection() {
             animate={title2InView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-            I work within the psychoanalytic framework, which delves into the
-            unconscious mind to uncover hidden thoughts and emotions that shape
-            behavior.
+           Guided by the psychoanalytic framework, I work to uncover what is
+            hidden in speech: the unconscious formations that influence how we
+            relate, love, suffer, and desire. I do not offer solutions—but
+            rather, a space for truth to emerge in its own time and logic.
             <br />
             <br />
-            This method allows for profound self-awareness, helping individuals
-            <strong> address</strong> challenges such as{" "}
-            <strong>trauma, anxiety, depression, and OCD.</strong>
+            Through this work, individuals may come to{" "}
+            <strong className="font-normal">
+              address trauma, anxiety, depression, obsessive thoughts, or
+              relational difficulties
+            </strong>
+            —not only by alleviating symptoms, but by accessing a deeper
+            understanding of who they are and what moves them.
           </motion.p>
         </div>
 
@@ -128,9 +141,9 @@ export default function AboutSection() {
           </div>
           <div className="space-y-6">
             <h2 className="font-heading xl:text-8xl lg:text-7xl text-6xl">
-              <AnimatedCounter from={0} to={1000} duration={1.2} />+
+              <AnimatedCounter from={0} to={12000} duration={1.2} />+
             </h2>
-            <p>Sessions Delivered</p>
+            <p>Clinical Hours </p>
           </div>
         </div>
       </div>

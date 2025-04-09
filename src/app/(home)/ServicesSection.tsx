@@ -39,14 +39,11 @@ export default function ServicesSection() {
             />
             <div className="text-center space-y-5">
               <h3 className="2xl:4xl lg:text-3xl text-3xl font-heading">
-                Online Therapy Session
+                Online Psychoanalytic Session
               </h3>
               <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
-                Get professional support from the comfort of your home with
-                secure and confidential online therapy sessions. Whether you're
-                dealing with anxiety, depression, trauma, or OCD, online therapy
-                offers flexibility and accessibility while helping you gain
-                self-awareness and emotional clarity.
+                Engage in the analytic process from the privacy of your own
+                space. Online sessions provide a secure, confidential space where your speech can unfold freely—without judgment or pressure. Whether you're facing anxiety, emotional pain, or trauma, this setting allows consistent, in-depth work to continue from anywhere.
               </p>
             </div>
             <Button size="lg" variant="secondary" arrow>
@@ -71,14 +68,10 @@ export default function ServicesSection() {
             />
             <div className="text-center space-y-5">
               <h3 className="2xl:4xl lg:text-3xl text-3xl font-heading">
-                Clinical Therapy Session
+                In-Person Psychoanalytic Session
               </h3>
               <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
-                Experience face-to-face therapy in a private and supportive
-                environment. In-clinic sessions provide a dedicated space for
-                deep self-exploration, helping you overcome challenges, process
-                emotions, and achieve personal growth with professional
-                psychological guidance.
+                In the quiet of the consulting room, face-to-face sessions offer a quiet space where speech can take shape and deeper layers of suffering can be explored. Beyond “talk therapy,” this is an encounter with yourself—through language, silence, and the unsaid—where symptoms begin to shift and meaning can emerge.
               </p>
             </div>
             <Button size="lg" variant="secondary" arrow>

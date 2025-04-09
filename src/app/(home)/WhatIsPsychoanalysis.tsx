@@ -2,15 +2,17 @@
 import Image from "next/image";
 import DecorativeLine from "../../assets/decorative-line.svg";
 import { useInView, motion } from "motion/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function WhatIsPsychoanalysis() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const titleInView = useInView(titleRef, { once: true });
 
+  const [hidden, setHidden] = useState(true);
+
   return (
     <section id="what-is-psychoanalysis" className="flex flex-col items-center">
-      <div className="flex justify-center gap-3">
+      <div className="flex justify-center gap-3 select-none">
         <Image
           src={DecorativeLine}
           alt=""
@@ -41,18 +43,37 @@ export default function WhatIsPsychoanalysis() {
         transition={{ duration: 0.8, ease: "easeInOut" }}
         className="text-center xl:w-[800px] lg:w-[700px] w-[min(90%,650px)] xl:text-xl lg:text-lg text-lg leading-[160%] opacity-80"
       >
-        Psychoanalysis is a form of therapy that helps you understand the deeper
-        layers of your mind—especially thoughts, emotions, and patterns you
-        might not even be aware of. It is based on the idea that many of our
-        feelings and behaviors are influenced by unconscious experiences, often
-        from childhood. Through open conversation in a safe and supportive
-        space, psychoanalysis helps you explore these hidden influences, uncover
-        unresolved emotions, and gain insight into why you think, feel, and act
-        the way you do. Unlike quick-fix approaches, psychoanalysis focuses on
-        long-term self-discovery and healing, allowing you to break free from
-        repeating patterns, overcome personal struggles, and develop a stronger
-        sense of self. It’s not just about treating symptoms—it’s about truly
-        understanding yourself and creating lasting change in your life.
+        "To enter psychoanalysis is to dare to know oneself—and to be forever
+        changed by what one finds."
+        <br />
+        <br />
+        Psychoanalysis is not simply a form of therapy, it is an encounter with
+        the deepest layers of the human psyche. Beneath what we believe we know
+        about ourselves lies an unconscious structured by language, where
+        forgotten memories, early desires, and unspoken truths continue to shape
+        our way of being.
+        <span className={hidden ? "hidden" : ""}>
+        <br />
+        <br />
+        In the psychoanalytic space, every word, silence, slip, and hesitation
+        becomes a clue. Through this unique experience of speaking freely, one
+        begins to trace the logic of one’s suffering—repetitions that return,
+        not by choice, but as expressions of something unresolved and unknown.
+          <br />
+          <br />
+          Psychoanalysis does not offer quick solutions. It offers something far
+          more profound: the possibility of transformation through truth. It is
+          a path toward discovering the desire that animates you, beyond roles,
+          symptoms, and appearances.
+        </span>{" "}
+        <span
+          className="underline hover:no-underline font-medium cursor-pointer "
+          onClick={() => {
+            setHidden((prev) => !prev);
+          }}
+        >
+          {hidden ? "Read More" : "Show Less"}
+        </span>
       </motion.p>
     </section>
   );
