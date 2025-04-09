@@ -1,6 +1,5 @@
 "use client";
 import PageTitle from "@/components/global/PageTitle";
-// import HaifaaBitarPortrait from "../../../public/haifaa-portrait-cropped.jpg";
 import HaifaaBitarPortrait from "../../../public/linkedin-portrait-shadow.jpg";
 import Image from "next/image";
 import Sparkle from "../../assets/sparkle.svg";

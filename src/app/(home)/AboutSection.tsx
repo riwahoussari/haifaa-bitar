@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import DecorativeLine from "../../assets/decorative-line.svg";
-import HaifaaBitarPortrait from "../../../public/haifaa-portrait.jpg";
+import HaifaaBitarPortrait from "../../../public/linkedin-portrait-shadow.jpg";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
 import AnimatedCounter from "@/components/global/AnimatedCounter";
