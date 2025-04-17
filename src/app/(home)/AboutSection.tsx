@@ -9,9 +9,11 @@ import AnimatedCounter from "@/components/global/AnimatedCounter";
 export default function AboutSection() {
   const title1Ref = useRef<HTMLHeadingElement>(null);
   const title2Ref = useRef<HTMLHeadingElement>(null);
+  const title3Ref = useRef<HTMLHeadingElement>(null);
 
   const title1InView = useInView(title1Ref, { once: true });
   const title2InView = useInView(title2Ref, { once: true });
+  const title3InView = useInView(title3Ref, { once: true });
 
   return (
     <section className="my-container flex lg:items-end items-center flex-col lg:flex-row">
@@ -21,7 +23,7 @@ export default function AboutSection() {
           src={HaifaaBitarPortrait}
           placeholder="blur"
           alt="Portrait of Psychoanalyst Haifaa Bitar."
-          className="lg:w-[80%]  w-[min(80%,350px)] max-h-dvh object-contain lg:mx-0 mx-auto"
+          className="lg:w-[80%]  w-[min(80%,350px)] max-h-dvh object-contain lg:mx-0 mx-auto rounded-2xl"
         />
 
         <div
@@ -90,7 +92,7 @@ export default function AboutSection() {
           </motion.p>
         </div>
 
-        {/* My Approach */}
+        {/* Beyond the clinic */}
         <div
           ref={title2Ref}
           className="lg:w-[95%] ms-auto lg:space-y-12 space-y-8"
@@ -104,13 +106,44 @@ export default function AboutSection() {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="font-heading xl:text-6xl lg:text-5xl text-4xl"
           >
-            My Approach
+            Beyond The Clinic
           </motion.h2>
           <motion.p
             animate={title2InView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-           Guided by the psychoanalytic framework, I work to uncover what is
+            Alongside my clinical practice, I have also been dedicated to the
+            transmission of psychoanalytic thought. In 2017 and 2018, I
+            translated conferences on Lacanian psychoanalysis from French to
+            Arabic, allowing these ideas to reach a wider audience. More
+            recently, in the summer of 2024, I translated the book The Letter,
+            Time and Object by Lela Chikhani, a project that reflects my deep
+            engagement with language as both a tool and a terrain of the
+            unconscious.
+          </motion.p>
+        </div>
+
+        {/* My Approach */}
+        <div
+          ref={title3Ref}
+          className="lg:w-[95%] ms-auto lg:space-y-12 space-y-8"
+        >
+          <motion.h2
+            animate={
+              title3InView
+                ? { rotateX: "0", opacity: 1, y: "0" }
+                : { rotateX: "90deg", opacity: 0, y: "50%" }
+            }
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="font-heading xl:text-6xl lg:text-5xl text-4xl"
+          >
+            My Approach
+          </motion.h2>
+          <motion.p
+            animate={title3InView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            Guided by the psychoanalytic framework, I work to uncover what is
             hidden in speech: the unconscious formations that influence how we
             relate, love, suffer, and desire. I do not offer solutions—but
             rather, a space for truth to emerge in its own time and logic.

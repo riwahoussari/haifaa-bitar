@@ -43,13 +43,13 @@ function About1() {
         initial={{ opacity: 0, y: "20%" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
-        className="relative md:w-[40%] w-[min(80%,300px)] max-h-dvh"
+        className="relative md:w-[40%] w-[min(80%,300px)] max-h-dvh "
       >
         <Image
           src={HaifaaBitarPortrait}
           placeholder="blur"
           alt="Portrait of Psychoanalyst Haifaa Bitar."
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover "
         />
         <div
           className="w-[200%] absolute top-full left-1/2 -translate-1/2  h-10 rounded-[100%] bg-bg-color"
@@ -169,6 +169,9 @@ function About2() {
           My goal is to offer you the space to explore and analyze yourself from
           an analytical perspective, to be able to grow beyond your challenges,
           take charge of your own life, and to achieve your own goals.
+          <br />
+          <br />
+          Alongside my clinical practice, I have also been dedicated to the transmission of psychoanalytic thought. In 2017 and 2018, I translated conferences on Lacanian psychoanalysis from French to Arabic, allowing these ideas to reach a wider audience. More recently, in the summer of 2024, I translated the book The Letter, Time and Object by Lela Chikhani, a project that reflects my deep engagement with language as both a tool and a terrain of the unconscious.
         </motion.p>
       </div>
 
@@ -188,7 +191,9 @@ function About2() {
         <motion.div
           animate={title2InView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className={`divide-black divide-y xl:text-xl lg:text-lg text-lg text-black grid content-center ${showMore? "grid-rows-11" : "grid-rows-6"} `}
+          className={`divide-black divide-y xl:text-xl lg:text-lg text-lg text-black grid content-center ${
+            showMore ? "grid-rows-11" : "grid-rows-6"
+          } `}
         >
           {/* 1 */}
           <div className=" grid grid-cols-12 gap-4 md:gap-14 py-3">
