@@ -7,7 +7,7 @@ import Button from "@/components/global/Button";
 import { useRef, useState } from "react";
 import { useInView, motion } from "motion/react";
 import AnimatedCounter from "@/components/global/AnimatedCounter";
-import { handleBooking } from "@/components/global/BookingModal";
+import { BookingButton } from "@/components/global/BookingButton";
 
 export default function AboutPage() {
   return (
@@ -172,7 +172,13 @@ function About2() {
           take charge of your own life, and to achieve your own goals.
           <br />
           <br />
-          Alongside my clinical practice, I have also been dedicated to the transmission of psychoanalytic thought. In 2017 and 2018, I translated conferences on Lacanian psychoanalysis from French to Arabic, allowing these ideas to reach a wider audience. More recently, in the summer of 2024, I translated the book The Letter, Time and Object by Lela Chikhani, a project that reflects my deep engagement with language as both a tool and a terrain of the unconscious.
+          Alongside my clinical practice, I have also been dedicated to the
+          transmission of psychoanalytic thought. In 2017 and 2018, I translated
+          conferences on Lacanian psychoanalysis from French to Arabic, allowing
+          these ideas to reach a wider audience. More recently, in the summer of
+          2024, I translated the book The Letter, Time and Object by Lela
+          Chikhani, a project that reflects my deep engagement with language as
+          both a tool and a terrain of the unconscious.
         </motion.p>
       </div>
 
@@ -506,9 +512,11 @@ function About2() {
           supportive space where individuals can explore their inner world,
           overcome challenges, and reclaim control over their lives.
         </motion.p>
-        <Button onClick={handleBooking} variant="secondary" arrow size="md">
-          Book A Session
-        </Button>
+        <BookingButton>
+          <Button variant="secondary" arrow size="md">
+            Book A Session
+          </Button>
+        </BookingButton>
       </div>
     </section>
   );

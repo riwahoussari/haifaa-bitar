@@ -7,9 +7,9 @@ import IllustrationClinicalTherapy from "../../../public/illustration-clinical-t
 import { useInView, motion } from "motion/react";
 import { useRef } from "react";
 import {
-  handleBookingInPerson,
-  handleBookingOnline,
-} from "@/components/global/BookingModal";
+  BookingButtonInPerson,
+  BookingButtonOnline,
+} from "@/components/global/BookingButton";
 
 export default function ServicesSection() {
   const card1Ref = useRef<HTMLDivElement>(null);
@@ -35,32 +35,31 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full"
         >
-          <div
-            onClick={handleBookingOnline}
-            className="group/card hover:bg-primary hover:text-white duration-300 ease-in-out w-full flex flex-col px-5 py-12 gap-8 lg:p-12 items-center border-primary border-1 rounded-lg"
-          >
-            <Image
-              src={IllustrationOnlineTherapy}
-              alt="Illustration of online therapy session."
-              className="lg:w-full w-[min(94%,400px)]"
-            />
-            <div className="text-center space-y-5">
-              <h3 className="2xl:4xl lg:text-3xl text-3xl font-heading">
-                Online Psychoanalytic Session
-              </h3>
-              <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
-                Engage in the analytic process from the privacy of your own
-                space. Online sessions provide a secure, confidential space
-                where your speech can unfold freely—without judgement or
-                pressure. Whether you're facing anxiety, emotional pain, or
-                trauma, this setting allows consistent, in-depth work to
-                continue from anywhere.
-              </p>
+          <BookingButtonOnline className="cursor-pointer">
+            <div className="group/card hover:bg-primary hover:text-white duration-300 ease-in-out w-full flex flex-col px-5 py-12 gap-8 lg:p-12 items-center border-primary border-1 rounded-lg">
+              <Image
+                src={IllustrationOnlineTherapy}
+                alt="Illustration of online therapy session."
+                className="lg:w-full w-[min(94%,400px)]"
+              />
+              <div className="text-center space-y-5">
+                <h3 className="2xl:4xl lg:text-3xl text-3xl font-heading">
+                  Online Psychoanalytic Session
+                </h3>
+                <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
+                  Engage in the analytic process from the privacy of your own
+                  space. Online sessions provide a secure, confidential space
+                  where your speech can unfold freely—without judgement or
+                  pressure. Whether you're facing anxiety, emotional pain, or
+                  trauma, this setting allows consistent, in-depth work to
+                  continue from anywhere.
+                </p>
+              </div>
+              <Button size="lg" variant="secondary" arrow>
+                Book Now
+              </Button>
             </div>
-            <Button size="lg" variant="secondary" arrow>
-              Book Now
-            </Button>
-          </div>
+          </BookingButtonOnline>
         </motion.div>
 
         <motion.div
@@ -71,31 +70,31 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full"
         >
-          <div
-            onClick={handleBookingInPerson}
-            className="group/card hover:bg-primary hover:text-white duration-300 ease-in-out w-full flex flex-col px-5 py-12 gap-8 lg:p-12 items-center border-primary border-1 rounded-lg"
-          >
-            <Image
-              src={IllustrationClinicalTherapy}
-              alt="Illustration of clinical therapy session."
-              className="lg:w-full w-[min(94%,400px)]"
-            />
-            <div className="text-center space-y-5">
-              <h3 className="2xl:4xl lg:text-3xl text-3xl font-heading">
-                In-Person Psychoanalytic Session
-              </h3>
-              <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
-                In the quiet of the consulting room, face-to-face sessions offer
-                a quiet space where speech can take shape and deeper layers of
-                suffering can be explored. Beyond “talk therapy,” this is an
-                encounter with yourself—through language, silence, and the
-                unsaid—where symptoms begin to shift and meaning can emerge.
-              </p>
+          <BookingButtonInPerson className="cursor-pointer">
+            <div className="group/card hover:bg-primary hover:text-white duration-300 ease-in-out w-full flex flex-col px-5 py-12 gap-8 lg:p-12 items-center border-primary border-1 rounded-lg">
+              <Image
+                src={IllustrationClinicalTherapy}
+                alt="Illustration of clinical therapy session."
+                className="lg:w-full w-[min(94%,400px)]"
+              />
+              <div className="text-center space-y-5">
+                <h3 className="2xl:4xl lg:text-3xl text-3xl font-heading">
+                  In-Person Psychoanalytic Session
+                </h3>
+                <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
+                  In the quiet of the consulting room, face-to-face sessions
+                  offer a quiet space where speech can take shape and deeper
+                  layers of suffering can be explored. Beyond “talk therapy,”
+                  this is an encounter with yourself—through language, silence,
+                  and the unsaid—where symptoms begin to shift and meaning can
+                  emerge.
+                </p>
+              </div>
+              <Button size="lg" variant="secondary" arrow>
+                Book Now
+              </Button>
             </div>
-            <Button size="lg" variant="secondary" arrow>
-              Book Now
-            </Button>
-          </div>
+          </BookingButtonInPerson>
         </motion.div>
       </div>
 

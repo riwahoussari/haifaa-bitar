@@ -3,6 +3,7 @@ import Image from "next/image";
 // import DecorativeLine from "../../assets/decorative-line.svg";
 import DecorativeLineLeft from "../../assets/left-line-decoration.jpg"
 import DecorativeLineRight from "../../assets/right-line-decoration.jpg"
+// import DecorativeLine2 from "../../assets/decorative-line-6.png"
 import HaifaaBitarPortrait from "../../../public/linkedin-portrait-shadow.jpg";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";

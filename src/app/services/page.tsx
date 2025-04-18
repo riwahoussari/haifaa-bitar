@@ -10,9 +10,9 @@ import CheckMarkSvg from "@/components/global/CheckMarkSvg";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
 import {
-  handleBookingInPerson,
-  handleBookingOnline,
-} from "@/components/global/BookingModal";
+  BookingButtonInPerson,
+  BookingButtonOnline,
+} from "@/components/global/BookingButton";
 
 export default function ServicesPage() {
   return (
@@ -123,17 +123,18 @@ function OnlineTherapy() {
           }
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="group"
-          onClick={handleBookingOnline}
         >
-          <div className="flex justify-center items-center bg-primary-200 rounded-lg border-1 border-primary col-span-1 h-full group-hover:bg-primary group-hover:text-white duration-200 ease-in-out">
-            <p className="font-heading xl:text-4xl lg:text-3xl text-2xl text-center py-4">
-              Book A Session{" "}
-              <ArrowSvg
-                className="stroke-primary xl:w-8 lg:w-7 w-6 inline-block ms-2 group-hover:translate-x-3  group-hover:stroke-white duration-200 ease-in-out"
-                strokeWidth={1.8}
-              />
-            </p>
-          </div>
+          <BookingButtonOnline className="h-full cursor-pointer">
+            <div className="flex justify-center items-center bg-primary-200 rounded-lg border-1 border-primary col-span-1 h-full group-hover:bg-primary group-hover:text-white duration-200 ease-in-out">
+              <p className="font-heading xl:text-4xl lg:text-3xl text-2xl text-center py-4">
+                Book A Session{" "}
+                <ArrowSvg
+                  className="stroke-primary xl:w-8 lg:w-7 w-6 inline-block ms-2 group-hover:translate-x-3  group-hover:stroke-white duration-200 ease-in-out"
+                  strokeWidth={1.8}
+                />
+              </p>
+            </div>
+          </BookingButtonOnline>
         </motion.div>
 
         {/* Checklist */}
@@ -301,17 +302,18 @@ function ClinicalTherapy() {
           }
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="group"
-          onClick={handleBookingInPerson}
         >
-          <div className="flex justify-center items-center bg-primary-200 rounded-lg border-1 border-primary col-span-1 h-full group-hover:bg-primary group-hover:text-white duration-200 ease-in-out">
-            <p className="font-heading xl:text-4xl lg:text-3xl text-2xl text-center py-4">
-              Book A Session{" "}
-              <ArrowSvg
-                className="stroke-primary xl:w-8 lg:w-7 w-6 inline-block ms-2 group-hover:translate-x-3  group-hover:stroke-white duration-200 ease-in-out"
-                strokeWidth={1.8}
-              />
-            </p>
-          </div>
+          <BookingButtonInPerson className="h-full cursor-pointer">
+            <div className="flex justify-center items-center bg-primary-200 rounded-lg border-1 border-primary col-span-1 h-full group-hover:bg-primary group-hover:text-white duration-200 ease-in-out">
+              <p className="font-heading xl:text-4xl lg:text-3xl text-2xl text-center py-4">
+                Book A Session{" "}
+                <ArrowSvg
+                  className="stroke-primary xl:w-8 lg:w-7 w-6 inline-block ms-2 group-hover:translate-x-3  group-hover:stroke-white duration-200 ease-in-out"
+                  strokeWidth={1.8}
+                />
+              </p>
+            </div>
+          </BookingButtonInPerson>
         </motion.div>
       </div>
     </div>

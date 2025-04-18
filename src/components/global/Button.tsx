@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from "react";
 import ArrowSvg from "./ArrowSvg";
 
 type ButtonProps = {
@@ -6,7 +6,7 @@ type ButtonProps = {
   variant?: "primary" | "secondary";
   arrow?: boolean;
   children: string;
-} & HTMLAttributes<HTMLButtonElement>;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function Button({
   size = "md",
@@ -28,7 +28,8 @@ export default function Button({
   const sizeStyles =
     (size === "md" &&
       "px-[20px] py-[4px] text-[16px] gap-[10px] lg:px-[25px] lg:py-[5px]") ||
-    (size === "lg" && "lg:px-[40px] lg:py-[8px] lg:text-[22px] lg:gap-[20px] px-[30px] py-[6px] text-[20px] gap-[16px]");
+    (size === "lg" &&
+      "lg:px-[40px] lg:py-[8px] lg:text-[22px] lg:gap-[20px] px-[30px] py-[6px] text-[20px] gap-[16px]");
 
   // arrow styles
   const arrowBaseStyles =
@@ -39,7 +40,8 @@ export default function Button({
 
   const arrowColorStyles =
     (variant === "primary" && "stroke-white group-hover/btn:stroke-primary") ||
-    (variant === "secondary" && "stroke-primary group-hover/btn:stroke-white group-hover/card:stroke-primary");
+    (variant === "secondary" &&
+      "stroke-primary group-hover/btn:stroke-white group-hover/card:stroke-primary");
 
   return (
     <button

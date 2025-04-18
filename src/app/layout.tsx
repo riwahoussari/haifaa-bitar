@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Martel_Sans, Cormorant_Infant, Roboto } from "next/font/google";
+import {  Cormorant_Infant, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -12,12 +12,6 @@ const cormorantInfant = Cormorant_Infant({
   style: ["italic"],
 });
 
-// Load Martel Sans with multiple weights
-const martelSans = Martel_Sans({
-  variable: "--font-martel-sans",
-  weight: ["400", "600"],
-  subsets: ["latin"],
-});
 
 // Load Roboto
 const roboto = Roboto({

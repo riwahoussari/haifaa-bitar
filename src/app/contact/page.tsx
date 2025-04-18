@@ -3,7 +3,7 @@ import Button from "@/components/global/Button";
 import Image from "next/image";
 import DecorativeCorner from "../../assets/decorative-corner.svg";
 import PageTitle from "@/components/global/PageTitle";
-import { useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { useInView, motion } from "motion/react";
 
 export default function ContactPage() {
@@ -23,6 +23,77 @@ function ContactSection() {
   const card2InView = useInView(card2Ref, { once: true });
   const card3InView = useInView(card3Ref, { once: true });
 
+  const refs = {
+    fullName: useRef<HTMLInputElement>(null),
+    phoneNumber: useRef<HTMLInputElement>(null),
+    message: useRef<HTMLTextAreaElement>(null),
+  };
+  const [pending, setPending] = useState(false);
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setPending(true);
+
+    const data = {
+      fullName: refs.fullName.current?.value,
+      phoneNumber: refs.phoneNumber.current?.value,
+      message: refs.message.current?.value,
+    };
+    console.log(refs.fullName.current)
+    console.log(refs.phoneNumber.current)
+    console.log(refs.message.current)
+    if (!data.fullName || !data.phoneNumber || !data.message) {
+      alert("Please fill in all fields.");
+      setPending(false);
+      return;
+    }
+
+    const options = {
+      method: "POST",
+      headers: {
+        "content-Type": "application/json",
+        Authorization: `Bearer EACGQeuC355oBOwqtSjKHG5pUemRO9M9jK3ZCMUZBGKc21TSdgDQkCHwYhL4CpzQIzi00RcJNQVGmZCRxZCpwihJWNXAECqke1vAhbRzSer58bJHk0pETjgUxGWcpzyIm5UwYskrPjnMqnOkCPFo6pZC06O1mKxCUQjKnKpvuMMIJCGZA3vqkvolSzbTOLaxKEfEwZDZD`,
+      },
+      body: JSON.stringify({
+        messaging_product: "whatsapp",
+        to: "+96181059119",
+        type: "template",
+        template: {
+          name: "name_contactmethod_message",
+          language: { code: "en_US" },
+          components: [
+            {
+              type: "body",
+              parameters: [
+                { type: "text", text: `${data.fullName}` },
+                { type: "text", text: `${data.phoneNumber}` },
+                { type: "text", text: `${data.message}` },
+              ],
+            },
+          ],
+        },
+      }),
+    };
+
+    fetch("https://graph.facebook.com/v22.0/184354061432356/messages", options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.messages[0].message_status == "accepted") {
+          alert(
+            "Thank You For Your Message! \n Will get back to you as soon as possible :)"
+          );
+        } else {
+          throw new Error("message_status not accepted");
+        }
+        setPending(false);
+      })
+      .catch((error) => {
+        alert(
+          ":( Oops! There was a problem sending your message. \nPlease contact me by a different method!"
+        );
+        setPending(false);
+      });
+  }
+
   return (
     <section className="my-container flex flex-col lg:flex-row 2xl:gap-16 xl:gap-12 lg:gap-8 gap-8">
       {/* form */}
@@ -37,12 +108,18 @@ function ContactSection() {
         <h2 className="font-heading xl:text-4xl lg:text-3xl text-3xl 2xl:mb-10 xl:mb-9 lg:mb-8 mb-6">
           Share A Message
         </h2>
-        <form className="flex flex-col 2xl:gap-7 xl:gap-6 lg:gap-5 gap-6 items-start">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col 2xl:gap-7 xl:gap-6 lg:gap-5 gap-6 items-start"
+        >
           <div className="flex flex-col 2xl:w-[80%] xl:w-[85%] lg:w-[90%] w-[min(100%,400px)] ">
             <label className="xl:text-lg text-base mb-1" htmlFor="fullName">
               Full Name
             </label>
             <input
+              ref={refs.fullName}
+              required
+              disabled={pending}
               className="xl:text-xl lg:text-lg text-lg py-2 px-4 border-1 border-primary/50 hover:border-primary rounded-md"
               type="text"
               id="fullName"
@@ -55,6 +132,9 @@ function ContactSection() {
               Phone Number
             </label>
             <input
+              ref={refs.phoneNumber}
+              required
+              disabled={pending}
               className="xl:text-xl lg:text-lg text-lg py-2 px-4 border-1 border-primary/50 hover:border-primary rounded-md"
               type="tel"
               id="phoneNumber"
@@ -67,6 +147,9 @@ function ContactSection() {
               Message
             </label>
             <textarea
+              ref={refs.message}
+              disabled={pending}
+              required
               className="xl:text-xl lg:text-lg text-lg py-2 px-4 border-1 border-primary/50 hover:border-primary rounded-md"
               name="message"
               id="message"
@@ -74,7 +157,13 @@ function ContactSection() {
               rows={3}
             ></textarea>
           </div>
-          <Button size="md" variant="secondary" arrow>
+          <Button
+            type="submit"
+            disabled={pending}
+            size="md"
+            variant="secondary"
+            arrow
+          >
             Send Message
           </Button>
         </form>

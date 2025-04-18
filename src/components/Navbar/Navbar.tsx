@@ -9,7 +9,7 @@ import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import HoverLink from "./HoverLink";
 import Image from "next/image";
 import { TransitionLink } from "../global/TransitionLink";
-import { handleBooking } from "../global/BookingModal";
+import { BookingButton } from "../global/BookingButton";
 
 const PAGES = [
   {
@@ -117,9 +117,11 @@ export default function Navbar() {
             </Button>
           </TransitionLink>
 
-          <Button onClick={handleBooking} arrow={false} size="md">
-            Book Now
-          </Button>
+          <BookingButton>
+            <Button arrow={false} size="md">
+              Book Now
+            </Button>
+          </BookingButton>
 
           {/* Mobile Burger Menu */}
           <div

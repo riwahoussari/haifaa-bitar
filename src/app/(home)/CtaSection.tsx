@@ -1,10 +1,11 @@
+"use client";
 import Button from "@/components/global/Button";
 import DecorativeCorner from "../../assets/decorative-corner.svg";
 import ClinicPhoto from "../../../public/clinic-photo.jpg";
 import Image from "next/image";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
-import { handleBooking } from "@/components/global/BookingModal";
+import { BookingButton } from "@/components/global/BookingButton";
 
 export default function CtaSection() {
   const card1Ref = useRef<HTMLDivElement>(null);
@@ -48,9 +49,11 @@ export default function CtaSection() {
             You don’t have to figure it all out alone — support is here, one
             click away.
           </p>
-          <Button onClick={handleBooking} size="md" variant="primary" arrow>
-            Book Now
-          </Button>
+          <BookingButton>
+            <Button size="md" variant="primary" arrow>
+              Book Now
+            </Button>
+          </BookingButton>
         </motion.div>
 
         {/* clinic photo */}
