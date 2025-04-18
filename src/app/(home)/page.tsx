@@ -6,7 +6,10 @@ import WhatIsPsychoanalysis from "./WhatIsPsychoanalysis";
 import QuoteSection from "./QuoteSection";
 import CtaSection from "./CtaSection";
 
+
+
 export default function Home() {
+
   return (
     <>
       <HeroSection />

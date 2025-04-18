@@ -5,6 +5,7 @@ import Button from "@/components/global/Button";
 import Image from "next/image";
 import DecorativeCorner from "../../assets/decorative-corner.svg";
 import DecorativeLine from "../../assets/decorative-line.svg";
+import { TransitionLink } from "@/components/global/TransitionLink";
 
 function AnimProps(i: number) {
   return {
@@ -91,9 +92,12 @@ export default function HeroSection() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut", delay: 0.6 }}
         >
-          <Button arrow size="lg" variant="primary">
-            Reach Out
-          </Button>
+          {/* </TransitionLink> */}
+          <TransitionLink href="/contact" >
+            <Button arrow size="lg" variant="primary">
+              Reach Out
+            </Button>
+          </TransitionLink>
         </motion.div>
 
         {/* decoration */}

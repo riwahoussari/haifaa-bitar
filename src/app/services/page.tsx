@@ -9,6 +9,10 @@ import DecorativeLine from "../../assets/decorative-line.svg";
 import CheckMarkSvg from "@/components/global/CheckMarkSvg";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
+import {
+  handleBookingInPerson,
+  handleBookingOnline,
+} from "@/components/global/BookingModal";
 
 export default function ServicesPage() {
   return (
@@ -22,7 +26,7 @@ export default function ServicesPage() {
 
 function Services() {
   return (
-    <section className="my-container space-y-60 lg:space-y-72 xl:space-y-80">
+    <section className="my-container space-y-32 lg:space-y-40 xl:space-y-52">
       {/* Online Therapy */}
       <OnlineTherapy />
       {/* Clinical Therapy */}
@@ -34,7 +38,7 @@ function Services() {
 function OnlineTherapy() {
   const titleRef = useRef<HTMLDivElement>(null);
   const card1Ref = useRef<HTMLDivElement>(null);
-  const card2Ref = useRef<HTMLAnchorElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
   const card3Ref = useRef<HTMLDivElement>(null);
   const card4Ref = useRef<HTMLDivElement>(null);
   const titleInView = useInView(titleRef, { once: true });
@@ -44,7 +48,10 @@ function OnlineTherapy() {
   const card4InView = useInView(card4Ref, { once: true });
 
   return (
-    <div className="flex flex-col 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
+    <div
+      id="online-psychoanalytic-sessions"
+      className="flex flex-col 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8 pt-32"
+    >
       {/* title */}
       <motion.div
         animate={
@@ -79,7 +86,13 @@ function OnlineTherapy() {
           className="rounded-lg border-1 border-primary 2xl:p-8 xl:p-7 lg:p-6 p-4 col-span-7"
         >
           <p className="xl:text-xl lg:text-lg text-base leading-[160%] opacity-80">
-          Engage in the analytic process from the privacy of your own space. Online sessions offer a secure and confidential frame where your speech can unfold freely—without interruption, judgment, or pressure. Whether you’re struggling with anxiety, emotional pain, obsessive thoughts, or trauma, this setting allows the work to continue across distances, offering consistency and depth as we listen together to what your unconscious reveals.
+            Engage in the analytic process from the privacy of your own space.
+            Online sessions offer a secure and confidential frame where your
+            speech can unfold freely—without interruption, judgement, or
+            pressure. Whether you’re struggling with anxiety, emotional pain,
+            obsessive thoughts, or trauma, this setting allows the work to
+            continue across distances, offering consistency and depth as we
+            listen together to what your unconscious reveals.
           </p>
         </motion.div>
 
@@ -103,14 +116,14 @@ function OnlineTherapy() {
       {/* row 2 */}
       <div className="lg:grid grid-cols-3 flex flex-col-reverse w-[min(96%,600px)] lg:w-full mx-auto  2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
         {/* Button */}
-        <motion.a
+        <motion.div
           ref={card2Ref}
           animate={
             card2InView ? { y: 0, opacity: 1 } : { y: "100px", opacity: 0.2 }
           }
           transition={{ duration: 0.6, ease: "easeOut" }}
-          href="#"
           className="group"
+          onClick={handleBookingOnline}
         >
           <div className="flex justify-center items-center bg-primary-200 rounded-lg border-1 border-primary col-span-1 h-full group-hover:bg-primary group-hover:text-white duration-200 ease-in-out">
             <p className="font-heading xl:text-4xl lg:text-3xl text-2xl text-center py-4">
@@ -121,7 +134,7 @@ function OnlineTherapy() {
               />
             </p>
           </div>
-        </motion.a>
+        </motion.div>
 
         {/* Checklist */}
         <motion.div
@@ -167,7 +180,7 @@ function OnlineTherapy() {
 function ClinicalTherapy() {
   const titleRef = useRef<HTMLDivElement>(null);
   const card1Ref = useRef<HTMLDivElement>(null);
-  const card2Ref = useRef<HTMLAnchorElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
   const card3Ref = useRef<HTMLDivElement>(null);
   const card4Ref = useRef<HTMLDivElement>(null);
   const titleInView = useInView(titleRef, { once: true });
@@ -177,7 +190,10 @@ function ClinicalTherapy() {
   const card4InView = useInView(card4Ref, { once: true });
 
   return (
-    <div className="flex flex-col 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8">
+    <div
+      id="in-person-psychoanalytic-sessions"
+      className="flex flex-col 2xl:gap-12 xl:gap-10 lg:gap-8 gap-8 pt-32"
+    >
       {/* title */}
       <motion.div
         ref={titleRef}
@@ -228,7 +244,12 @@ function ClinicalTherapy() {
           className="rounded-lg border-1 border-primary 2xl:p-8 xl:p-7 lg:p-6 p-4 col-span-7"
         >
           <p className="xl:text-xl lg:text-lg text-base leading-[160%] opacity-80">
-          In the quiet of the consulting room, face-to-face sessions offer a dedicated space where speech can take shape. Here, you are invited to explore what lies beneath the surface of your suffering. This is not simply “talk therapy,” but an encounter with yourself—through language, silence, and the unsaid. It is a space where symptoms begin to shift, and meaning begins to emerge.
+            In the quiet of the consulting room, face-to-face sessions offer a
+            dedicated space where speech can take shape. Here, you are invited
+            to explore what lies beneath the surface of your suffering. This is
+            not simply “talk therapy,” but an encounter with yourself—through
+            language, silence, and the unsaid. It is a space where symptoms
+            begin to shift, and meaning begins to emerge.
           </p>
         </motion.div>
       </div>
@@ -273,14 +294,14 @@ function ClinicalTherapy() {
         </motion.div>
 
         {/* Button */}
-        <motion.a
+        <motion.div
           ref={card2Ref}
           animate={
             card2InView ? { y: 0, opacity: 1 } : { y: "100px", opacity: 0.2 }
           }
           transition={{ duration: 0.6, ease: "easeOut" }}
-          href="#"
           className="group"
+          onClick={handleBookingInPerson}
         >
           <div className="flex justify-center items-center bg-primary-200 rounded-lg border-1 border-primary col-span-1 h-full group-hover:bg-primary group-hover:text-white duration-200 ease-in-out">
             <p className="font-heading xl:text-4xl lg:text-3xl text-2xl text-center py-4">
@@ -291,7 +312,7 @@ function ClinicalTherapy() {
               />
             </p>
           </div>
-        </motion.a>
+        </motion.div>
       </div>
     </div>
   );

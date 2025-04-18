@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
-import DecorativeLine from "../../assets/decorative-line.svg";
+// import DecorativeLine from "../../assets/decorative-line.svg";
+import DecorativeLineLeft from "../../assets/left-line-decoration.jpg"
+import DecorativeLineRight from "../../assets/right-line-decoration.jpg"
 import HaifaaBitarPortrait from "../../../public/linkedin-portrait-shadow.jpg";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
@@ -27,20 +29,20 @@ export default function AboutSection() {
         />
 
         <div
-          className="lg:hidde absolute top-full w-full -translate-y-1/2 bg-bg-color flex justify-center gap-3 select-none"
+          className="lg:hidde absolute top-full w-full -translate-y-1/2 bg-bg-color flex justify-center gap-1 select-none"
           style={{ boxShadow: "0px 0px 10px 10px var(--color-bg-color)" }}
         >
           <Image
-            src={DecorativeLine}
+            src={DecorativeLineLeft}
             alt=""
             aria-hidden
-            className="w-[max(20vw,140px)] lg:[visibility:hidden]"
+            className="w-[max(20vw,160px)] lg:[visibility:hidden]"
           />
           <Image
-            src={DecorativeLine}
+            src={DecorativeLineRight}
             alt=""
             aria-hidden
-            className="w-[max(20vw,140px)] rotate-y-180 lg:[visibility:hidden]"
+            className="w-[max(20vw,160px)] lg:[visibility:hidden]"
           />
         </div>
       </div>
@@ -84,7 +86,7 @@ export default function AboutSection() {
             <br />
             <br />I believe each person carries a singular story, marked by
             early experiences, language, and desire. In the analytic space, you
-            are invited to speak freely, without censorship or judgment, in
+            are invited to speak freely, without censorship or judgement, in
             order to explore what lies beneath the surface of symptoms,
             repetition, and emotional pain. This work does not seek to
             normalize, but to listen—to what insists, returns, and demands to be

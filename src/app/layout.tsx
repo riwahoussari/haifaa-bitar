@@ -44,6 +44,7 @@ export default function RootLayout({
       <body
         className={`${cormorantInfant.variable} ${roboto.variable} antialiased bg-bg-color text-primary font-text`}
       >
+
         {/* page transition animation */}
         <div className="page-transition-container fixed z-20 flex h-dvh w-full">
           {Array(COLS_NUMB)

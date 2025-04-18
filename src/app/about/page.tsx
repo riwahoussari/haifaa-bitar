@@ -7,6 +7,7 @@ import Button from "@/components/global/Button";
 import { useRef, useState } from "react";
 import { useInView, motion } from "motion/react";
 import AnimatedCounter from "@/components/global/AnimatedCounter";
+import { handleBooking } from "@/components/global/BookingModal";
 
 export default function AboutPage() {
   return (
@@ -505,7 +506,7 @@ function About2() {
           supportive space where individuals can explore their inner world,
           overcome challenges, and reclaim control over their lives.
         </motion.p>
-        <Button variant="secondary" arrow size="md">
+        <Button onClick={handleBooking} variant="secondary" arrow size="md">
           Book A Session
         </Button>
       </div>

@@ -6,6 +6,10 @@ import IllustrationOnlineTherapy from "../../../public/illustration-online-thera
 import IllustrationClinicalTherapy from "../../../public/illustration-clinical-therapy.svg";
 import { useInView, motion } from "motion/react";
 import { useRef } from "react";
+import {
+  handleBookingInPerson,
+  handleBookingOnline,
+} from "@/components/global/BookingModal";
 
 export default function ServicesSection() {
   const card1Ref = useRef<HTMLDivElement>(null);
@@ -31,7 +35,10 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full"
         >
-          <div className="group/card hover:bg-primary hover:text-white duration-300 ease-in-out w-full flex flex-col px-5 py-12 gap-8 lg:p-12 items-center border-primary border-1 rounded-lg">
+          <div
+            onClick={handleBookingOnline}
+            className="group/card hover:bg-primary hover:text-white duration-300 ease-in-out w-full flex flex-col px-5 py-12 gap-8 lg:p-12 items-center border-primary border-1 rounded-lg"
+          >
             <Image
               src={IllustrationOnlineTherapy}
               alt="Illustration of online therapy session."
@@ -43,7 +50,11 @@ export default function ServicesSection() {
               </h3>
               <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
                 Engage in the analytic process from the privacy of your own
-                space. Online sessions provide a secure, confidential space where your speech can unfold freely—without judgment or pressure. Whether you're facing anxiety, emotional pain, or trauma, this setting allows consistent, in-depth work to continue from anywhere.
+                space. Online sessions provide a secure, confidential space
+                where your speech can unfold freely—without judgement or
+                pressure. Whether you're facing anxiety, emotional pain, or
+                trauma, this setting allows consistent, in-depth work to
+                continue from anywhere.
               </p>
             </div>
             <Button size="lg" variant="secondary" arrow>
@@ -60,7 +71,10 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full"
         >
-          <div className="group/card hover:bg-primary hover:text-white duration-300 ease-in-out w-full flex flex-col px-5 py-12 gap-8 lg:p-12 items-center border-primary border-1 rounded-lg">
+          <div
+            onClick={handleBookingInPerson}
+            className="group/card hover:bg-primary hover:text-white duration-300 ease-in-out w-full flex flex-col px-5 py-12 gap-8 lg:p-12 items-center border-primary border-1 rounded-lg"
+          >
             <Image
               src={IllustrationClinicalTherapy}
               alt="Illustration of clinical therapy session."
@@ -71,7 +85,11 @@ export default function ServicesSection() {
                 In-Person Psychoanalytic Session
               </h3>
               <p className="2xl:text-xl lg:text-lg text-base opacity-80 w-[min(94%,450px)] mx-auto">
-                In the quiet of the consulting room, face-to-face sessions offer a quiet space where speech can take shape and deeper layers of suffering can be explored. Beyond “talk therapy,” this is an encounter with yourself—through language, silence, and the unsaid—where symptoms begin to shift and meaning can emerge.
+                In the quiet of the consulting room, face-to-face sessions offer
+                a quiet space where speech can take shape and deeper layers of
+                suffering can be explored. Beyond “talk therapy,” this is an
+                encounter with yourself—through language, silence, and the
+                unsaid—where symptoms begin to shift and meaning can emerge.
               </p>
             </div>
             <Button size="lg" variant="secondary" arrow>

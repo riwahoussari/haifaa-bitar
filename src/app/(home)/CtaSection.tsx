@@ -4,6 +4,7 @@ import ClinicPhoto from "../../../public/clinic-photo.jpg";
 import Image from "next/image";
 import { useRef } from "react";
 import { useInView, motion } from "motion/react";
+import { handleBooking } from "@/components/global/BookingModal";
 
 export default function CtaSection() {
   const card1Ref = useRef<HTMLDivElement>(null);
@@ -47,7 +48,7 @@ export default function CtaSection() {
             You don’t have to figure it all out alone — support is here, one
             click away.
           </p>
-          <Button size="md" variant="primary" arrow>
+          <Button onClick={handleBooking} size="md" variant="primary" arrow>
             Book Now
           </Button>
         </motion.div>
