@@ -38,9 +38,7 @@ function ContactSection() {
       phoneNumber: refs.phoneNumber.current?.value,
       message: refs.message.current?.value,
     };
-    console.log(refs.fullName.current)
-    console.log(refs.phoneNumber.current)
-    console.log(refs.message.current)
+
     if (!data.fullName || !data.phoneNumber || !data.message) {
       alert("Please fill in all fields.");
       setPending(false);
@@ -55,7 +53,7 @@ function ContactSection() {
       },
       body: JSON.stringify({
         messaging_product: "whatsapp",
-        to: "+96181059119",
+        to: "+9613404129",
         type: "template",
         template: {
           name: "name_contactmethod_message",
@@ -85,12 +83,18 @@ function ContactSection() {
           throw new Error("message_status not accepted");
         }
         setPending(false);
+        if (refs.fullName.current) refs.fullName.current.value = "";
+        if (refs.phoneNumber.current) refs.phoneNumber.current.value = "";
+        if (refs.message.current) refs.message.current.value = "";
       })
       .catch((error) => {
         alert(
           ":( Oops! There was a problem sending your message. \nPlease contact me by a different method!"
         );
         setPending(false);
+        if (refs.fullName.current) refs.fullName.current.value = "";
+        if (refs.phoneNumber.current) refs.phoneNumber.current.value = "";
+        if (refs.message.current) refs.message.current.value = "";
       });
   }
 
