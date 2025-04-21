@@ -1,6 +1,5 @@
 "use client";
-import haifaaBitarLogo from "../../../public/HB-name.png";
-// import haifaaBitarLogo from "../../../public/HB-original-logo.png";
+import haifaaBitarLogo from "../../../public/HB-original-logo.png";
 import Button from "../global/Button";
 import { useEffect, useRef, useState } from "react";
 import BurgerMenuSvg from "./BurgerMenuSvg";

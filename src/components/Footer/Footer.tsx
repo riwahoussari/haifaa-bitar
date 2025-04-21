@@ -1,11 +1,10 @@
 import Image from "next/image";
 import DecorativeLine from "../../assets/decorative-line.svg";
 import WhatsappSvg from "./Icons/WhatsappSvg";
-import FacebookSvg from "./Icons/FacebookSvg";
 import InstagramSvg from "./Icons/InstagramSvg";
 import ArrowSvg from "../global/ArrowSvg";
-import Link from "next/link";
 import HoverLink from "../Navbar/HoverLink";
+import LinkedinSvg from "./Icons/Linkedin";
 
 export default function Footer() {
   return (
@@ -105,14 +104,14 @@ export default function Footer() {
 
       {/* Social Links */}
       <div className="flex gap-8 justify-center">
-        <a target="_blank" href="https://wa.me/3404129">
+        <a target="_blank" href="https://wa.me/9613404129">
           <WhatsappSvg />
         </a>
-        <a target="_blank" href="https://instagram.com">
+        <a target="_blank" href="https://instagram.com/psy.haifaabitar">
           <InstagramSvg />
         </a>
-        <a target="_blank" href="https://facebook.com">
-          <FacebookSvg />
+        <a target="_blank" href="https://www.linkedin.com/in/haifaa-bitar/">
+          <LinkedinSvg />
         </a>
       </div>
 
